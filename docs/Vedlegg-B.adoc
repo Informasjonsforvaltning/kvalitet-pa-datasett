@@ -61,7 +61,7 @@ Eksempel på brukertilbakemelding:
 ....
 image::images/KlasseneIDQV.png[]
 
-_Figur 3: Datamodell som viser de mest relevante klassene i DQV (kilde: _https://www.w3.org/TR/vocab-dqv/DataQuality0.2.9.svg[_W3C DQV]__)._
+_Figur 3: Datamodell som viser de mest relevante klassene i DQV (kilde: https://www.w3.org/TR/vocab-dqv/DataQuality0.2.9.svg[W3C DQV])._
 
 Jf. figuren ovenfor som er kopiert fra W3C DQV, har arbeidsgruppen i første omgang ikke valgt å standardisere/spesifisere implementering av QualityPolicy og Prov (provenance) som også er i DQV-modellen ovenfor. Dette fordi det i denne omgangen ikke er identifisert konkrete behov/brukerhistorier knyttet til disse. Dette utelukker ikke mulighet for den enkelte virksomheten/sektoren å beskrive kvalitet i form av QualityPolicy og Prov (provenance) slik DQV har definert det. Informer gjerne Difi om erfaringer på dette.
 
@@ -80,9 +80,10 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
  *** Kilde: https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012[W3C DQV].
 
 *Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
  :accuracy
     a dqv:Dimension ;
     skos:prefLabel “accuracy”@en ;
@@ -102,11 +103,11 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
 
  * I hvilken grad datasettet inneholder forventede opplysninger, for en spesifikk brukskontekst.
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
+*Uttrykt i DQV*:
+....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-....
  :coverage
     a dqv:Dimension ;
     skos:prefLabel “coverage”@en ;
@@ -125,13 +126,13 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
 
  * I hvilken grad det mangler elementer som forventes å være med, for en spesifikk brukskontekst.
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
+*Uttrykt i DQV*:
+....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
 skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 
-....
  :undercoverage
     a dqv:Dimension ;
     skos:prefLabel “undercoverage”@en ;
@@ -150,16 +151,16 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * Hvorvidt det mangler noen elementer i datasettet.
 
-*Uttrykt i DQV*: +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb . +
-
-#definisjon av kvalitetsmål +
-
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+#definisjon av kvalitetsmål
+
  :missingItemsMetric
     a dqv:Metric ;
     skos:prefLabel “missing items metric”@en ;
@@ -167,9 +168,9 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “whether there are some items missing in a particular dataset”@en ;
     dqv:expectedDataType xsd:boolean ;
     dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
-....
+
 #eksempel på angivelse av måleresultat “true” (ja, det mangler noe)
-....
+
  :measurementMissingItems
     a dqv:QualityMeasurement ;
     dqv:isMeasurementOf :missingItemsMetric ;
@@ -184,15 +185,15 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * Antall elementer som ikke er i datasettet men som forventes å være med.
 
-*Uttrykt i DQV*: +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-  skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb . +
+*Uttrykt i DQV*:
+....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+  skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 
 #definisjon av kvalitetsmål
-....
  :numberOfMissingItemsMetric
     a dqv:Metric ;
     skos:prefLabel “number of missing items metric”@en ;
@@ -200,9 +201,9 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “number of items that are missing in the dataset”@en ;
     dqv:expectedDataType xsd:integer ;
     dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
-....
+
 #eksempel på angivelse av måleresultat “8” (mangler åtte elementer)
-....
+
  :measurementNumerOfMissingItems
     a dqv:QualityMeasurement ;
     dqv:isMeasurementOf :numberOfMissingItemsMetric ;
@@ -217,15 +218,15 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * Forholdet mellom antall elementer som mangler og antall elementer som skulle være med i datasettet.
 
-*Uttrykt i DQV*: +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
+*Uttrykt i DQV*:
+....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
 skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 
-#definisjon av kvalitetsmål +
-....
+#definisjon av kvalitetsmål
  :rateOfMissingItemsMetric
     a dqv:Metric ;
     skos:prefLabel “rate of missing items metric”@en ;
@@ -233,9 +234,9 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “ratio between the number of items that are missing and the number of the items that should be present”@en ;
     dqv:expectedDataType xsd:decimal ;
     dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
-....
-#eksempel på angivelse av måleresultat “0.08” (mangler 8%) +
-....
+
+#eksempel på angivelse av måleresultat “0.08” (mangler 8%)
+
  :measurementRateOfMissingItems
     a dqv:QualityMeasurement ;
     dqv:isMeasurementOf :rateOfMissingItemsMetric ;
@@ -258,12 +259,13 @@ Overdekning kan defineres på helt tilsvarende måte (men “motsatt vis”) som
 
  * Eksklusive <<dubletter>> (som er en egen kvalitetsdeldimensjon)
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
  :overcoverage
     a dqv:Dimension ;
     skos:prefLabel “overcoverage”@en ;
@@ -281,12 +283,13 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * I hvilken grad datasettet dekker den statistiske populasjonen.
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
  :selectivity
     a dqv:Dimension ;
     skos:prefLabel “selectivity”@en ;
@@ -303,12 +306,13 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * I hvilken grad datasettet inneholder flere enn én forekomst av samme opplysning.
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
  :redundancy
     a dqv:Dimension ;
     skos:prefLabel “redundancy”@en ;
@@ -327,10 +331,11 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
  ** Engelsk original: The degree to which data has attributes that are of the right age in a specific context of use.
  *** Kilde: https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012[W3C DQV].
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
  :currentness
     a dqv:Dimension ;
     skos:prefLabel “currentness”@en ;
@@ -347,10 +352,11 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
  ** Engelsk original: The degree to which data has attributes that adhere to standards, conventions or regulations in force and similar rules relating to data quality in a specific context of use.
  *** Kilde: https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012[W3C DQV].
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
  :compliance
     a dqv:Dimension ;
     skos:prefLabel “compliance”@en ;
@@ -367,15 +373,16 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
  * Datasettet er i samsvar med gitt standard, spesifikasjon, regel og lignende
 
 *Uttrykt i DQV*:  +
-@prefix dcat: <https://www.w3.org/ns/dcat#> . +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix dcterms: <http://dublincore.org/documents/dcmi-terms/> . +
-@prefix foaf: <http://xmlns.com/foaf/spec/> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
-skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 ....
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://dublincore.org/documents/dcmi-terms/> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
  :myDataset
     a dcat:dataset ;
     dcterms:conformsTo :aQualityStandard .
@@ -399,9 +406,10 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
  *** Kilde: https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012[W3C DQV].
 
 *Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
 :availability
     a dqv:Dimension ;
     skos:prefLabel “availability”@en ;
@@ -418,10 +426,11 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
  ** Engelsk original: Relevancy refers to the provision of information which is in accordance with the task at hand and important to the users’ query.
  *** Kilde: https://www.w3.org/TR/vocab-dqv/#DimensionsofZaveri[W3C DQV].
 
-*Uttrykt i DQV*:  +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
+*Uttrykt i DQV*:
 ....
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
  :relevancy
     a dqv:Dimension ;
     skos:prefLabel “relevancy”@en ;
@@ -436,18 +445,18 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * Fritekst beskrivelse av hva datasettet er opprettet/innsamlet for
 
-*Uttrykt i DQV*: +
-@prefix dcat: <https://www.w3.org/ns/dcat#> . +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix dc: <http://dublincore.org/documents/dces/> . +
-@prefix oa: <http://www.w3.org/ns/oa#> . +
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
+*Uttrykt i DQV*:
+....
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://dublincore.org/documents/dces/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
 skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 
-....
  :myDataset
     a dcat:dataset ;
     dqv:hasQualityAnnotation :usageAnnotation .
@@ -475,18 +484,18 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 
  * Fritekst beskrivelse av hva datasettet er, og ikke er, egnet til
 
-*Uttrykt i DQV*:  +
-@prefix dcat: <https://www.w3.org/ns/dcat#> . +
-@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> . +
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> . +
-@prefix dc: <http://dublincore.org/documents/dces/> . +
-@prefix oa: <http://www.w3.org/ns/oa#> . +
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . +
-@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> . +
-@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;  +
+*Uttrykt i DQV*:
+....
+@prefix dcat: <https://www.w3.org/ns/dcat#> .
+@prefix dqv: <https://www.w3.org/TR/vocab-dqv/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://dublincore.org/documents/dces/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <https://www.w3.org/TR/xmlschema11-2/> .
+@prefix xxx: <https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/> ;
 skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
 
-....
  :myDataset
     a dcat:dataset ;
     dqv:hasQualityAnnotation :usageAnnotation .

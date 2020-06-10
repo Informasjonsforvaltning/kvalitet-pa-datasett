@@ -11,6 +11,7 @@ Arbeidsgruppen fikk i oppgave å utarbeide en spesifikasjon for hvordan kvalitet
 
 Kartverket ved Morten Borrebæk har ledet denne arbeidsgruppen. Følgende etater og personer har ellers vært involvert i arbeidet:
 
+[cols="30,70"]
 |===
 |*Virksomhet*|*Person*
 
@@ -30,6 +31,7 @@ Kartverket ved Morten Borrebæk har ledet denne arbeidsgruppen. Følgende etater
 
 Mot slutten av arbeidet ble det etablert en mindre arbeidsgruppe som fikk i oppgave å foreslå hvordan det foreslåtte faglige innholdet skal kunne representeres ved hjelp av DQV og implementeres i DCAT-AP-NO. Den mindre arbeidsgruppen har bestått av følgende etater/personer:
 
+[cols="30,70"]
 |===
 |*Virksomhet*|*Person*
 

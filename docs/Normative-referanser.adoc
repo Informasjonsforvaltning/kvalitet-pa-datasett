@@ -1,7 +1,7 @@
 
 = Normative referanser
 
-Difi, DCAT-AP-NO, Standard for beskrivelse av datasett og datakataloger, 11.10.2016, https://doc.difi.no/dcat-ap-no/[https://doc.difi.no/dcat-ap-no/].
+Difi, DCAT-AP-NO, Standard for beskrivelse av datasett og datakataloger, 11.10.2016.
 
 W3C Data on the Web Best Practices: Data Quality Vocabulary (DQV), footnote:[ DQV (Data Quality Vocabulary) er i skrivende stund ikke en anbefaling fra W3C ennå, men kun et “arbeidsgruppenotat”.] W3C Working Group Note 15 December 2016, https://www.w3.org/TR/vocab-dqv/[https://www.w3.org/TR/vocab-dqv/].
 

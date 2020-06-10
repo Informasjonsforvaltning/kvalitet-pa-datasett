@@ -1,36 +1,46 @@
-include::../shared/translation.adoc[]
+include::locale/attributes.adoc[]
 
 = Spesifikasjon for beskrivelse av kvalitet på datasett
-Direktoratet for forvaltning og IKT
-v1.0
-:description: Hvordan beskrive kvalitet på datasett i en datakatalog
+Versjon 1.0
+:description: Spesifikasjon for beskrivelse av kvalitet på datasett
 :doctype: book
 :docinfo:
 :icons: font
 :toc: left
 :toclevels: 3
 :sectanchors:
-:title-logo-image: utils/logo.jpg
+:title-logo-image: image:images/digitaliseringsdirektoratet.png[pdfwidth=30vw]
 // :sectnums:
 :sectnumlevels: 5
 
-// {description}
+image::images/digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
-include::../shared/download.adoc[]
+include::shared/download.adoc[]
+
+*Publisert*: september 2017
 
 // :leveloffset: +1
 
 // Innhold her.
+
 include::Omfang-og-avgrensning.adoc[]
+
 include::Normative-referanser.adoc[]
+
 include::Begreper-og-definisjoner.adoc[]
+
 include::Standardisert-metode.adoc[]
+
 include::Vedlegg-A.adoc[]
+
 include::Vedlegg-B.adoc[]
+
 include::Vedlegg-C.adoc[]
+
 include::Vedlegg-D.adoc[]
+
 include::Vedlegg-E.adoc[]
 
 
 
-include::../shared/stats.adoc[]
+include::shared/stats.adoc[]

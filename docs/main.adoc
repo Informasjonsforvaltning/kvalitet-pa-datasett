@@ -9,11 +9,12 @@ Versjon 1.0
 :toc: left
 :toclevels: 3
 :sectanchors:
-:title-logo-image: image:images/digitaliseringsdirektoratet.png[pdfwidth=30vw]
+:imagesdir: images
+:title-logo-image: image:digitaliseringsdirektoratet.png[pdfwidth=30vw]
 // :sectnums:
 :sectnumlevels: 5
 
-image::images/digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
+image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
 include::shared/download.adoc[]
 

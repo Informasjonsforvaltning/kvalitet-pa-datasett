@@ -1,6 +1,5 @@
-[[vedleggB,vedlegg B]]
+= Vedlegg B - Forslag til Implementering i DCAT-AP-NO [[vedleggB,vedlegg B]]
 
-= Vedlegg B - Forslag til Implementering i DCAT-AP-NO
 Informativ del av dette dokumentet.
 
 Dette vedlegget inneholder først forslag til hvordan beskrivelse av kvalitet på datasett skal kunne implementeres i DCAT-AP-NO. Vedlegget inneholder deretter eksempler på hvordan selve beskrivelsene kan uttrykkes ved å bruke DQV. Kapittel <<Kompletthet/Dekning>> med <<Underdekning>> og kvalitetsmålene der under, viser et relativt komplett eksempel på hva som trengs for å beskrive “Dekning” ved å bruke DQV.

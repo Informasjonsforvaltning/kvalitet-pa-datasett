@@ -1,4 +1,3 @@
-
 = Vedlegg C - URIer/navnerom som er brukt
 
 [cols="20,40,40"]

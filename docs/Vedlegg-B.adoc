@@ -6,7 +6,7 @@ Dette vedlegget inneholder først forslag til hvordan beskrivelse av kvalitet p�
 
 Navnerom (_namespaces_) som er brukt i eksemplene er ikke kvalitetssikret. Navnerom “xxx” er brukt der vi foreløpig ikke fant relevante etablerte vokabular (og dermed bør det opprettes norske vokabularer før de eventuelt kommer inn i relevante internasjonale vokabularer).
 
-=== Implementering i DCAT-AP-NO
+== Implementering i DCAT-AP-NO
 
 I løsningsforslaget til implementering i DCAT-AP-NO baserer vi oss på  prinsippene for RDFS-modellering. En står derfor fritt til å legge til egenskaper som ikke er omtalt i spesifikasjonen. Størst mulig grad av gjenbruk av eksisterende vokabularer er en selvsagt forutsetning.
 
@@ -68,7 +68,7 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
 
 [[Noyaktighet,Nøyaktighet]]
 
-=== Kvalitetsdimensjon Nøyaktighet (accuracy)
+== Kvalitetsdimensjon Nøyaktighet (accuracy)
 
 *Merknad*: Arbeidsgruppen fant ut at dette var en av de kvalitetsdimensjonene som det allerede er etablert flere parallelle (internasjonale) kvalitetsdeldimensjoner og kvalitetsmål, som også til dels er nokså fagspesifikke. Arbeidsgruppen valgte derfor ikke å bruke tid på å gå dypere langs denne dimensjonen med å eksemplifisere mer i form av kvalitetsdeldimensjoner og kvalitetsmål.
 
@@ -91,7 +91,7 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
 ....
 
 [[Komplett,Kompletthet/Dekning]]
-=== Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)
+== Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)
 
 
 *Merknad*: Arbeidsgruppen fant ut at dette er en av de kvalitetsdimensjonene som det er mulig å bli enig om noen få felles kvalitetsdeldimensjoner og der under kvalitetsmål.
@@ -116,7 +116,7 @@ Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knytt
 ....
 
 [[Underdekning]]
-==== Kvalitetsdeldimensjon Underdekning (undercoverage/omission)
+=== Kvalitetsdeldimensjon Underdekning (undercoverage/omission)
 
 
 *Merknad*: med noe redaksjonelt avvik tilsvarer dette ISO 19157:2013(E) Annex D.2.2.
@@ -141,7 +141,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:broader xxx:coverage # antar at “coverage” er definert.
 ....
 
-===== Kvalitetsmål Manglende elementer (missing items)
+==== Kvalitetsmål Manglende elementer (missing items)
 
 
 *Merknad*: ISO 19757:2013(E) Table D.5 - Missing item definerer et kvalitetsmål på hvorvidt et gitt/spesifikt element mangler, mens det som omhandles her i dette avsnittet er et kvalitetsmål på hvorvidt det mangler noen (uspesifikke) elementer i datasettet, derfor “elementer”/“items” i flertall.
@@ -177,7 +177,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 ....
 
 [[Antall,Antall manglende elementer]]
-===== Kvalitetsmål Antall manglende elementer (number of missing items)
+==== Kvalitetsmål Antall manglende elementer (number of missing items)
 
 
 *Definisjon*:
@@ -210,7 +210,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 ....
 
 [[Andel,Andel manglende elementer]]
-===== Kvalitetsmål Andel manglende elementer (rate of missing items)
+==== Kvalitetsmål Andel manglende elementer (rate of missing items)
 
 
 *Definisjon*:
@@ -243,7 +243,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 ....
 
 [[Overdekning]]
-==== Kvalitetsdeldimensjon Overdekning (overcoverage/commission)
+=== Kvalitetsdeldimensjon Overdekning (overcoverage/commission)
 
 
 Overdekning kan defineres på helt tilsvarende måte (men “motsatt vis”) som for underdekning i avsnittet foran, dvs. om elementer som ikke skulle vært i datasettet. Arbeidsgruppen velger derfor ikke å bruke tid på å eksemplifisere denne deldimensjonen.
@@ -275,7 +275,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:broader xxx:coverage # antar at “coverage” er definert .
 ....
 
-==== Kvalitetsdeldimensjon Selektivitet (selectivity)
+=== Kvalitetsdeldimensjon Selektivitet (selectivity)
 
 
 *Definisjon*:
@@ -298,7 +298,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 ....
 
 [[dublett,dubletter]]
-==== Kvalitetsdeldimensjon Dublett (redundancy/duplicate)
+=== Kvalitetsdeldimensjon Dublett (redundancy/duplicate)
 
 
 *Definisjon*:
@@ -321,7 +321,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:broader xxx:coverage # antar at “coverage” er definert .
 ....
 
-=== Kvalitetsdimensjon Aktualitet (currentness/timeliness)
+== Kvalitetsdimensjon Aktualitet (currentness/timeliness)
 
 
 *Definisjon*:
@@ -342,7 +342,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:prefLabel “aktualitet”@nb ;
     skos:definition “the degree to which data has attributes that are of the right age in a specific context of use”@en .
 ....
-=== Kvalitetsdimensjon Samsvar (compliance/conformity)
+== Kvalitetsdimensjon Samsvar (compliance/conformity)
 
 
 *Definisjon*:
@@ -364,7 +364,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “the degree to which data has attributes that adhere to standards, conventions or regulations in force and similar rules relating to data quality in a specific context of use”@en .
 ....
 
-==== Kvalitetsbeskrivelse I samsvar med (conforms to)
+=== Kvalitetsbeskrivelse I samsvar med (conforms to)
 
 
 *Definisjon*:
@@ -395,7 +395,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     dqv:inDimension xxx:compliance # antar at “compliance” er definert .
 ....
 
-=== Kvalitetsdimensjon Tilgjengelighet (availability)
+== Kvalitetsdimensjon Tilgjengelighet (availability)
 
 
 *Definisjon*:
@@ -416,7 +416,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “the degree to which data has attributes that enable it to be retrieved by users and/or applications in a specific context of use”@en .
 ....
 
-=== Kvalitetsdimensjon Relevans (relevancy)
+== Kvalitetsdimensjon Relevans (relevancy)
 
 
 *Definisjon*:
@@ -437,7 +437,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     skos:definition “the provision of information which is in accordance with the task at hand and important to the users”@en .
 ....
 
-==== Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)
+=== Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)
 
 
 *Definisjon*:
@@ -476,7 +476,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
     dc:format “text/plain” .
 ....
 
-==== Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)
+=== Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)
 
 
 *Definisjon*:

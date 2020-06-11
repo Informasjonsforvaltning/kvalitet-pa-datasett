@@ -20,7 +20,7 @@ include::shared/download.adoc[]
 
 *Publisert*: september 2017
 
-// :leveloffset: +1
+:leveloffset: +1
 
 // Innhold her.
 

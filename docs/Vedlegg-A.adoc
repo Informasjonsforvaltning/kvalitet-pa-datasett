@@ -1,7 +1,4 @@
-
-[[dimensjonene,vedlegg med forslag til dimensjonene]]
-
-= Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål
+= Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål [[dimensjonene,vedlegg med forslag til dimensjonene]]
 
 Informativ del av dette dokumentet.
 

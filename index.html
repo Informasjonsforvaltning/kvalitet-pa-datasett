@@ -5,8 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="description" content="Mal for bruk til nye spesifikasjoner som er laga i asciidoc.">
-<title>Spesifikasjonsmal</title>
+<meta name="description" content="Spesifikasjon for beskrivelse av kvalitet på datasett">
+<meta name="author" content="Versjon 1.0">
+<title>Spesifikasjon for beskrivelse av kvalitet på datasett</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,12 +441,54 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>Spesifikasjonsmal</h1>
+<h1>Spesifikasjon for beskrivelse av kvalitet på datasett</h1>
+<div class="details">
+<span id="author" class="author">Versjon 1.0</span><br>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Innholdsfortegnelse</div>
 <ul class="sectlevel1">
-<li><a href="#_forord">Forord</a></li>
-<li><a href="#_kapittel_1">Kapittel 1</a></li>
+<li><a href="#_omfang_og_avgrensning">Omfang og avgrensning</a></li>
+<li><a href="#_normative_referanser">Normative referanser</a></li>
+<li><a href="#Begreper">Begreper og definisjoner</a></li>
+<li><a href="#_standardisert_metode_for_å_beskrive_kvalitet_på_datasett">Standardisert metode for å beskrive kvalitet på datasett</a></li>
+<li><a href="#dimensjonene">Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål</a></li>
+<li><a href="#vedleggB">Vedlegg B - Forslag til Implementering i DCAT-AP-NO</a>
+<ul class="sectlevel2">
+<li><a href="#_implementering_i_dcat_ap_no">Implementering i DCAT-AP-NO</a></li>
+<li><a href="#Noyaktighet">Kvalitetsdimensjon Nøyaktighet (accuracy)</a></li>
+<li><a href="#Komplett">Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)</a>
+<ul class="sectlevel3">
+<li><a href="#Underdekning">Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</a></li>
+<li><a href="#Overdekning">Kvalitetsdeldimensjon Overdekning (overcoverage/commission)</a></li>
+<li><a href="#_kvalitetsdeldimensjon_selektivitet_selectivity">Kvalitetsdeldimensjon Selektivitet (selectivity)</a></li>
+<li><a href="#dublett">Kvalitetsdeldimensjon Dublett (redundancy/duplicate)</a></li>
+</ul>
+</li>
+<li><a href="#_kvalitetsdimensjon_aktualitet_currentnesstimeliness">Kvalitetsdimensjon Aktualitet (currentness/timeliness)</a></li>
+<li><a href="#_kvalitetsdimensjon_samsvar_complianceconformity">Kvalitetsdimensjon Samsvar (compliance/conformity)</a>
+<ul class="sectlevel3">
+<li><a href="#_kvalitetsbeskrivelse_i_samsvar_med_conforms_to">Kvalitetsbeskrivelse I samsvar med (conforms to)</a></li>
+</ul>
+</li>
+<li><a href="#_kvalitetsdimensjon_tilgjengelighet_availability">Kvalitetsdimensjon Tilgjengelighet (availability)</a></li>
+<li><a href="#_kvalitetsdimensjon_relevans_relevancy">Kvalitetsdimensjon Relevans (relevancy)</a>
+<ul class="sectlevel3">
+<li><a href="#_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage">Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)</a></li>
+<li><a href="#_ikke_kvantitativfritekst_beskrivelse_egnethet_usability">Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_vedlegg_c_uriernavnerom_som_er_brukt">Vedlegg C - URIer/navnerom som er brukt</a></li>
+<li><a href="#_vedlegg_d_referanser">Vedlegg D - Referanser</a></li>
+<li><a href="#vedleggE">Vedlegg E - Arbeidsgruppen</a>
+<ul class="sectlevel2">
+<li><a href="#_beskrivelse_av_arbeidsgruppens_oppgave">Beskrivelse av arbeidsgruppens oppgave</a></li>
+<li><a href="#_sammensetning_av_arbeidsgruppen">Sammensetning av arbeidsgruppen</a></li>
+<li><a href="#_arbeid_i_arbeidsgruppen">Arbeid i arbeidsgruppen</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -456,21 +499,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="content">
 <img src="images/digitaliseringsdirektoratet.png" alt="digitaliseringsdirektoratet" width="50%">
 </div>
-</div>
-<div class="paragraph">
-<p>Publisert: 2020-03-05</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Advarsel"></i>
-</td>
-<td class="content">
-Dette er mal-dokument for andre spesifikasjoner.
-</td>
-</tr>
-</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -485,27 +513,1885 @@ Dersom det oppleves problemer med nedlastet utgave, eksempelvis bilder som mangl
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_forord"><a class="anchor" href="#_forord"></a>Forord</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non augue dapibus, mollis odio vel, efficitur orci. Aenean venenatis orci a porta cursus. Suspendisse at commodo nulla, et sagittis neque. Maecenas pulvinar tellus vel tellus ultricies, sit amet tristique ex faucibus. Fusce sapien tellus, accumsan nec justo in, lobortis varius purus. Curabitur non libero lectus. Praesent accumsan quam sit amet luctus lobortis. Pellentesque augue dui, congue et felis eget, scelerisque porta enim. Proin iaculis placerat tincidunt. Cras nec gravida elit.</p>
-</div>
-<div class="paragraph">
-<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla id leo ac est condimentum tempus. Duis maximus tortor nec porttitor tincidunt. Donec eu mi sed libero pharetra semper quis in ex. Nunc mattis vitae libero eu rhoncus. Nam mattis magna ac tincidunt feugiat. Nulla ullamcorper, sem non volutpat varius, felis quam rhoncus massa, vitae pellentesque odio ligula a metus. Vestibulum commodo lacus eu odio posuere pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+<p><strong>Publisert</strong>: september 2017</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_kapittel_1"><a class="anchor" href="#_kapittel_1"></a>Kapittel 1</h2>
+<h2 id="_omfang_og_avgrensning"><a class="anchor" href="#_omfang_og_avgrensning"></a>Omfang og avgrensning</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Etiam tempus neque porttitor enim congue, vel dictum odio aliquet. Sed massa lectus, pretium nec erat in, facilisis tincidunt lorem. Phasellus ut elit ut nibh aliquet sollicitudin a in elit. Duis dolor ligula, gravida ac eros sit amet, congue ultrices lacus. Curabitur ut tincidunt ipsum, ut aliquam ipsum. Phasellus vel elit eros. Duis pellentesque risus non sollicitudin bibendum. Donec ultrices mi lectus, id feugiat leo hendrerit a. Pellentesque in urna a elit cursus consectetur in et lacus. In hac habitasse platea dictumst. Cras scelerisque, nisl in dapibus malesuada, justo risus ornare sapien, a sagittis massa enim ut nisi. Ut varius augue justo, vel efficitur ipsum suscipit sed. Duis sollicitudin lobortis ligula sit amet sagittis.</p>
+<p>Dokumentet inneholder en spesifikasjon til hvordan man skal beskrive kvalitet på datasett i en datakatalog.</p>
 </div>
 <div class="paragraph">
-<p>Vivamus elit massa, tempus vel bibendum non, fringilla sed ex. Mauris euismod neque et quam convallis gravida. Donec molestie nulla eget arcu molestie, et interdum neque auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec nec massa vel mauris pellentesque sollicitudin quis ut ante. Nulla malesuada pharetra ex, sit amet tincidunt mi dapibus ut. Aliquam erat volutpat. Sed sed quam sapien. Sed eu iaculis lacus, maximus interdum dolor.</p>
+<p>Så langt det er mulig er det i dette dokumentet også tatt med veiledning/eksempler på hvordan denne spesifikasjonen i praksis kan brukes. Veiledningen/eksemplene er ikke normative.</p>
+</div>
+<div class="paragraph">
+<p>I vedleggene til dette dokumentet er det tatt med forslag til hoveddimensjoner, deldimensjoner og kvalitetsmål av kvalitet på datasett, samt forslag til hvordan disse kan implementeres i standarden DCAT-AP-NO. Disse vedleggene er ikke normative.</p>
+</div>
+<div class="paragraph">
+<p>Dokumentet inneholder ikke spesifikasjon eller veiledning til hvordan man skal holde god kvalitet på datasett, heller ikke hvordan man skal måle datakvalitet.</p>
+</div>
+<div class="paragraph">
+<p>Spesifikasjonen er utarbeidet av en arbeidsgruppe (se <a href="#vedleggE">vedlegg E</a>) ledet av Kartverket ved Morten Borrebæk.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_normative_referanser"><a class="anchor" href="#_normative_referanser"></a>Normative referanser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Difi, DCAT-AP-NO, Standard for beskrivelse av datasett og datakataloger, 11.10.2016.</p>
+</div>
+<div class="paragraph">
+<p>W3C Data on the Web Best Practices: Data Quality Vocabulary (DQV), <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> W3C Working Group Note 15 December 2016, <a href="https://www.w3.org/TR/vocab-dqv/">https://www.w3.org/TR/vocab-dqv/</a>.</p>
+</div>
+<div class="paragraph">
+<p>W3C Data on the Web Best Practices: Dataset Usage Vocabulary (DUV), <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> W3C Working Group Note 15 December 2016, <a href="https://www.w3.org/TR/vocab-duv/">https://www.w3.org/TR/vocab-duv/</a>.</p>
+</div>
+<div class="paragraph">
+<p>W3C Simple Knowledge Organization System (SKOS), <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> <a href="http://www.w3.org/2004/02/skos/">http://www.w3.org/2004/02/skos/</a>.</p>
+</div>
+<div class="paragraph">
+<p>W3C Web Annotation Data Model, W3C Recommendation 23 February 2017, <a href="https://www.w3.org/TR/annotation-model/" class="bare">https://www.w3.org/TR/annotation-model/</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="Begreper"><a class="anchor" href="#Begreper"></a>Begreper og definisjoner</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Med “kvalitet” (f.eks. i ordene “kvalitetsdimensjon” og “kvalitetsmål”) menes det i dette dokumentet “datakvalitet”, “kvalitet på datasett” og lignende, men ikke “kvalitet” generelt.</p>
+</div>
+<div class="paragraph">
+<p>Med “mål” (f.eks. i ordet “kvalitetsmål”) menes det i dette dokumentet “måling”/”beregning” (<em>metric</em>), men ikke “målsetning”.</p>
+</div>
+<div id="kvalitetsdimensjon" class="ulist">
+<div class="title">Kvalitetsdimensjon:</div>
+<ul>
+<li>
+<p>Anbefalt term: kvalitetsdimensjon</p>
+</li>
+<li>
+<p>Alternativ term: dimensjon</p>
+</li>
+<li>
+<p>Definisjon: kriterier relevant for evaluering av kvalitet på datasett</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: represents criteria relevant for assessing quality.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde til definisjon: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension">dqv:Dimension i W3C DQV</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Merknad: Tilsvarer <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension">dqv:Dimension</a></p>
+</li>
+<li>
+<p>Eksempler: <a href="#Noyaktighet">Nøyaktighet</a>, <a href="#Komplett">Kompletthet/Dekning</a></p>
+</li>
+</ul>
+</div>
+<div id="kvalitetsdeldimensjon" class="ulist">
+<div class="title">Kvalitetsdeldimensjon:</div>
+<ul>
+<li>
+<p>Anbefalt term: kvalitetsdeldimensjon</p>
+</li>
+<li>
+<p>Alternativ term: deldimensjon</p>
+</li>
+<li>
+<p>Definisjon: en mer detaljert inndeling av en <a href="#kvalitetsdimensjon">Kvalitetsdimensjon:</a></p>
+</li>
+<li>
+<p>Merknad: Datakvalitetsvokabularet DQV fra W3C har ikke definert kvalitets*del*dimensjon som et eget begrep (klasse), men kun kvalitetsdimensjon.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For å uttrykke kvalitetsdeldimensjon, anbefaler vi å bruke “skos:broader”</p>
+</li>
+<li>
+<p>En kvalitetsdeldimensjon inneholder dermed alltid en “skos:broader”-relasjon til den kvalitetsdimensjonen som denne deldimensjonen tilhører.</p>
+</li>
+<li>
+<p>Arbeidsgruppen har hittil identifisert behov for kun et nivå av kvalitetsdeldimensjon.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Merknad: Tilsvarer <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Dimension">dqv:Dimension</a></p>
+</li>
+<li>
+<p>Eksempler: <a href="#Underdekning">Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</a> og <a href="#Overdekning">Kvalitetsdeldimensjon Overdekning (overcoverage/commission)</a> som kvalitetsdeldimensjoner under kvalitetsdimensjonen <a href="#Komplett">Kompletthet/Dekning</a>.</p>
+</li>
+</ul>
+</div>
+<div id="kvalitetsmal" class="ulist">
+<div class="title">Kvalitetsmål:</div>
+<ul>
+<li>
+<p>Anbefalt term: kvalitetsmål</p>
+</li>
+<li>
+<p>Alternativ term: beregningsmetode for et kvalitetsmål, definisjon av et kvalitetsmål</p>
+</li>
+<li>
+<p>Definisjon: definisjon/beskrivelse av måten å beregne/oppgi kvalitetsmål</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: Represents a standard to measure a quality dimension.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde til definisjon: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Metric">dqv:Metric</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Merknad: Tilsvarer <a href="https://www.w3.org/TR/vocab-dqv/#dqv:Metric">dqv:Metric</a></p>
+</li>
+<li>
+<p>Merknad: I henhold til DQV skal selve måleverdi oppgis ved å bruke <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement">dqv:QualityMeasurement</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: An observation (instance of dqv:QualityMeasurement) assigns a value in a given unit to a Metric.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Eksempler: <a href="#Andel">Andel manglende elementer</a> og <a href="#Antall">Antall manglende elementer</a> som kvalitetsmål langs kvalitetsdeldimensjonen <a href="#Underdekning">Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</a>.</p>
+</li>
+</ul>
+</div>
+<div id="måleresultat" class="ulist">
+<div class="title">Måleresultat:</div>
+<ul>
+<li>
+<p>Anbefalt term: måleresultat</p>
+</li>
+<li>
+<p>Alternativ term: kvalitetsmåleresultat</p>
+</li>
+<li>
+<p>Definisjon: konkret resultat av <a href="#kvalitetsmal">kvalitetsmål</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: Represents the evaluation of a given dataset (or dataset distribution) against a specific quality metric.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde til definisjon: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement">dqv:QualityMeasurement</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Merknad: Tilsvarer <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement">dqv:QualityMeasurement</a></p>
+</li>
+<li>
+<p>Eksempler: Verdi “0,10” som resultat av “Andel manglende elementer”; verdi “10” som resultat av “Antall manglende elementer”.</p>
+</li>
+</ul>
+</div>
+<div id="pre-definerte-kvalitetsmål" class="ulist">
+<div class="title">Pre-definerte kvalitetsmål:</div>
+<ul>
+<li>
+<p>Anbefalt term: pre-definert kvalitetsmål</p>
+</li>
+<li>
+<p>Definisjon: <a href="#kvalitetsmal">kvalitetsmål</a> (dqv:Metric) som finnes tilgjengelig for gjenbruk, og som kan refereres ved en unik identifikator (URI)</p>
+</li>
+<li>
+<p>Merknad: Arbeidsgruppen foreslår å etablere en felles oversikt over pre-definerte kvalitetsmål.</p>
+</li>
+<li>
+<p>Eksempler: Annex D i ISO 19157:2013 (E) “List of standardized data quality measures” inneholder en rekke pre-definerte kvalitetsmål.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nedenfor er en forenklet UML-modell som viser de viktigste begrepene/klassene og relasjoner mellom disse. Tegningen illustrerer også forslag til implementering i DCAT-AP-NO, som er informativt (se <a href="#vedleggB">vedlegg B</a> for mer detaljert beskrivelse av forslaget). Det er valgt å bruke norske navn på klassene og rollene, med navn på de vokabularer som skal brukes i implementasjonen i parentes. For å få en full oversikt over modellen må en også se på spesialiseringer og subtyper av andre vokabularer som benyttes i dqv.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/bilde1_kvalitetsbeskrivelser_dqv.jpg" alt="bilde1 kvalitetsbeskrivelser dqv">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figur 1: Kvalitetsbeskrivelser ved å bruke DQV.</em></p>
+</div>
+<div class="paragraph">
+<p>Figuren under illustrerer kvalitetsdimensjoner og kvalitetsdeldimensjoner og relasjon mellom disse, som begge er spesialiseringer av dqv:Dimension. Forskjellen er at en kvalitetsdeldimensjon peker til en kvalitetsdimensjon ved hjelp av <a href="https://www.w3.org/2009/08/skos-reference/skos.html#broader">skos:broader</a>. Det gjøres oppmerksom på at de enkelte kvalitetsdimensjoner og kvalitetsdeldimensjoner som er vist i figuren er kun eksempler og ikke normative.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Eksempler_kvalitetsdimensjoner.png" alt="Eksempler kvalitetsdimensjoner">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figur 2: Eksempler på kvalitetsdimensjoner og kvalitetsdeldimensjoner.</em></p>
+</div>
+<div class="paragraph">
+<p>NB! De enkelte kvalitetsdimensjoner og kvalitetsdeldimensjoner er i dette dokumentet informative eksempler, mens måten å relatere en kvalitetsdeldimensjon til den tilhørende kvalitetsdimensjon er normativ (ved å bruke skos:broader).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standardisert_metode_for_å_beskrive_kvalitet_på_datasett"><a class="anchor" href="#_standardisert_metode_for_å_beskrive_kvalitet_på_datasett"></a>Standardisert metode for å beskrive kvalitet på datasett</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Arbeidsgruppen foreslår følgende når det gjelder beskrivelse av kvalitet på datasett i en datakatalog:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Det er Anbefalt (= “skal, når det finnes”) å beskrive kvalitet på datasett i en datakatalog.</p>
+</li>
+<li>
+<p>Bruk <a href="https://www.w3.org/TR/vocab-dqv/">W3C DQV</a> som et standardisert vokabular til å beskrive kvalitet på datasett.</p>
+</li>
+<li>
+<p>Kvalitet på datasett beskrives langs et fåtalls kvalitetsdimensjoner (se <a href="#dimensjonene">vedlegg med forslag til dimensjonene</a>) - i listen under betyr parentes valgfritt:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Kvantiserbar kvalitet beskrives i form av “Kvalitetsdimensjon” &#8594; “Kvalitetsdeldimensjon” &#8594; “Kvalitetsmål” &#8594; “Måleresultat”</p>
+</li>
+<li>
+<p>Ikke-kvantiserbar kvalitet beskrives i form av (“Kvalitetsdimensjon” &#8594;) “Kvalitetsnote”</p>
+</li>
+<li>
+<p>Kvalitet som er i samsvar med gitt(e) standarder/spesifikasjoner beskrives i form av (“Kvalitetsdimensjon” &#8594;) “Standard/Spesifikasjon”</p>
+</li>
+<li>
+<p>Brukertilbakemeldinger knyttet til kvalitet beskrives i form av (“Kvalitetsdimensjon” &#8594;) “Brukerkvalitetstilbakemelding”
+Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> til et pre-definert kvalitetsmål. Definisjonene skal være i henhold til <a href="https://www.w3.org/TR/vocab-dqv/">W3C DQV</a>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Se også datamodellen i kapittelet foran.</p>
+</div>
+<div class="paragraph">
+<p>Resten av dokumentet inneholder:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Et informativt vedlegg med forslag fra arbeidsgruppen til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål.</p>
+</li>
+<li>
+<p>Et informativt vedlegg med forslag til implementering av kvalitetsmål i DCAT-AP-NO, med eksempler på beskrivelser/definisjoner uttrykt ved hjelp av DQV.</p>
+</li>
+<li>
+<p>Et informativt vedlegg med URIer/navnerom som er brukt i dette dokumentet.</p>
+</li>
+<li>
+<p>Et informativt vedlegg med referanser som ikke er nevnt under normative referanser.</p>
+</li>
+<li>
+<p>Et informativt vedlegg med informasjon om arbeidsgruppen som har utarbeidet denne spesifikasjonen.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dimensjonene"><a class="anchor" href="#dimensjonene"></a>Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Informativ del av dette dokumentet.</p>
+</div>
+<div class="paragraph">
+<p>Arbeidsgruppen foreslår å starte med følgende kvalitetsdimensjoner <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Nøyaktighet (Accuracy, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>, DQV Kap. 7.2)</p>
+</li>
+<li>
+<p>Kompletthet/Dekning</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Dekning er bredere enn Kompletthet (Completeness, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>, DQV Kap. 7.2). Dekning inkluderer bl.a. “overdekning”. Termen “kompletthet” brukes allikevel her fordi den er allerede i bruk av flere fagmilijøer.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Aktualitet (Currentness, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>, DQV Kap. 7.2)</p>
+</li>
+<li>
+<p>Samsvar (Compliance, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>, DQV Kap. 7.2)</p>
+</li>
+<li>
+<p>Tilgjengelighet (Availability, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>, DQV Kap. 7.2)</p>
+</li>
+<li>
+<p>Relevans (Relevancy, <a href="https://www.w3.org/TR/vocab-dqv/#bib-ZaveriEtAl">https://www.w3.org/TR/vocab-dqv/#bib-ZaveriEtAl</a>, DQV Kap. 7.3)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Tabellen under inneholder arbeidsgruppens forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål som bør tas med i Felles datakatalog. Når det senere arbeides med å pre-definere kvalitetsdimensjoner, kvalitetsdeldimesjoner og kvalitetsmål, vil forslagene i denne tabellen gås gjennom nøye før de endelig fastsettes.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Kilde/Etat (med ref)  samt evt gruppering)</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Kvalitetsdimensjon</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Kvalitets-deldimensjon</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Kvalitetsmål</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Beskrivelse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Nøyaktighet (Accuracy)</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV: The degree to which data has attributes that correctly represent the true value of the intended attribute of a concept or event in a specific context of use.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nøyaktighet av kvantitative egenskaper, riktighet av ikke-kvantitative egenskaper og objektenes klassifisering og relasjoner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Klassifikasjonsriktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sammenligning mellom anvendt klassifisering og virkelighet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ikke-kvantitativ egenskapsnøyaktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor nær ikke-kvantitative verdier er sanne verdier eller verdier akseptert som sanne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Kvantitativ egenskapsnøyaktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor nær kvantitative verdier er sanne verdier eller verdier akseptert som sanne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>KARTV</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor godt stedfestingen til et objekt samsvarer med virkeligheten/fasit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Absolutt stedfestingsnøyaktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor nær stedfestet posisjon er sann posisjon eller posisjon akseptert som sann</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nabonøyaktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor bra stedfestet posisjon samsvarer med andre stedfestede posisjoner</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Posisjonsnøyaktighet i rasterdata</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor bra posisjon i raster samsvarer med sann posisjon eller posisjon akseptert som sann</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>KARTV</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stedfestingspålitelighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uttrykk for hvor sterkt mulig gjenværende grove feil i materialet for stedfestingen påvirker slutt–resultatet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kvaliteten til egenskaper som definerer tid eller tidsavhengigheter mellom objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tidsnøyaktighet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hvor nær angitte tidsverdier er sanne verdier eller verdier akseptert som sanne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (BLUE-ETS)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hvor nært objekter og variable ligger de korrekte verdiene og i hvilken grad data er til å stole på</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identifiserbarhet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall (med problem). Andel i prosent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekter med ugyldige identifikasjonsnøkler (feil syntaks)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Autensititet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--”--</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objekter med gale identifikasjonsnøkler (men korrekt syntaks)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Konsistens</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--”--</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Om objektene er innbyrdes konsistente</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Mistenkelige verdier</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Knyttet til objekter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Feil knyttet til variable, f.eks. Validitet, rapporteringsfeil, registreringsfeil bearbeidingsfeil og mistenkelige verdier)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varians/standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Knyttet til variable, her bare summarisk gjengitt. Kan detaljere dette</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hvor langt fra sann verdi ligger resultatet? Kan man stole på det?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utvalgsfeil</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varians/standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feil i statistikk grunnet at den eventuelt er basert på utvalg]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Andre feil (dekning, frafall, målefeil, bearbeidingsfeil, modellfeil)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Varians/standardavvik</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">En rekke feiltyper utgjør dimensjonene, her bare summarisk gjengitt</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Fullstendighet/Dekning</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV completeness): The degree to which subject data associated with an entity has values for all expected attributes and related entity instances in a specific context of use.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beskrivelse av hvilke enheter som er med i et datasett i forhold til de som burde vært med.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<strong>Manglende data</strong>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data som mangler i et datasett</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(<strong>Overskytende data</strong>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data som ikke skal være i et datasett</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Angir om innholdet i datasettet er fullstendig i forhold til SSBs bruk, at det dekker akkurat det det skal dekke</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Underdekning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall eller andel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende enheter i datasettet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Overdekning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall eller andel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forekomst av ikke-enheter i datasettet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Selektivitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst (forklar)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datasettet inneholder bare deler av den statistiske populasjonen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dubletter</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Antall eller andel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forekomst av dubletter (enheter som er registrert flere ganger)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se Accuracy</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statistikk som ikke bygger på fullstendige data vil være unøyaktig og ikke til å stole på - Se ellers Accuracy</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Aktualitet (Currentness)</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV: The degree to which data has attributes that are of the right age in a specific context of use.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (BLUE-ETS)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktualitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid (dager eller uker)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid mellom slutten av kildens referansetidspunkt og SSB kan bruke data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Punktlighet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Andel som er punktlig. Prosent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mulig forsinkelse mellom lovet og realisert tidspunkt når SSB kan få data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tidsdifferanse</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid (dager eller uker)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid fra slutten av kildens referansetid til  SSB konkluderer med at vi kan starte jobben med data, pga. etterslep i registeret, f.eks. sene flyttemeldinger</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Enheters dynamikk og variables stabilitet *(Dynamics of objects and stability of variables)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bla. endringer i koder mellom referansetidspunkt og SSBs bruk</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Aktualitet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid (dager eller uker)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tid fra slutten av statistikkens referanseperiode til den publiseres</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Punktlighet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Andel som er punktlig. Prosent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Avvik fra publiseringstidspunkt som skal være varslet 3 måneder på forhånd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Samsvar (Compliance)</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV: The degree to which data has attributes that adhere to standards, conventions or regulations in force and similar rules relating to data quality in a specific context of use.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ConformanceResult</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A conformance result is the outcome of comparing the value or set of values obtained from applying a</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (BLUE-ETS)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Måler hvorvidt kilden kan gi god statistikk kombinert med andre kilder</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sammenlignbarhet av objekter</strong> (Comparability and alignment of objects)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dreier det seg om de samme objektene ved kobling av datasett?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">*Koblingsvariabel *(Linking variable)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eventuelle problemer med koblingsvariabel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sammenlignbarhet av variable</strong> (Comparability of variables)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Er variablene definert eller gruppert på samme måte?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sammenheng</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst, blant annet om bruk av standard grupperinger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Henger statistikken sammen med annen statistikk på samme eller tilgrensende områder? Brukes f.eks. Samme begreper/definisjoner, grupperinger og andre internasjonale eller nasjonale standarder?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sammenlignbarhet</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kan resultatene sammenlignes over tid og sted/geografi?</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Tilgjengelighet (Availability)</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV: The degree to which data has attributes that enable it to be retrieved by authorized users and/or applications in a specific context of use.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (BLUE-ETS)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Teknisk brukbarhet av datasettet og data i settet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lesbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Om filen kan leses (ikke problemer med formater, ødelagt fil, uvanlig karaktersett, umulig å dekode)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Samsvar i fildeklarasjon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Andel?</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manglende metadata, avvik fra beskrivelse</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konverterbarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feil som umuliggjør konvertering til de formater SSB bruker</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Om statistikken er lett tilgjengelig og forklart for brukerne</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tilgjengelighet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lett tilgjengelig og godt presentert statistikk: Hvor finnes den, henvisninger, bla. Til Statistikkbank. Eksempel på god tilgjengelighet: API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Klarhet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tekst</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dokumentasjon og metadata, eks. “Om statistikken”  og annen dokumentasjon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>DQV</em></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong><em>Relevans (Relevancy)</em></strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>DQV: Relevancy refers to the provision of information which is in accordance with the task at hand and important to the users’ query.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">det som ikke er dekket av øvrige kategorier og aggregert kvalitet basert på flere kvalitetselementer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Egnethet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">det som ikke er dekket av øvrige kategorier og aggregert kvalitet basert på flere kvalitetselementer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AggregertKvalitet</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summering av kvalitet fra andre kvalitetselementer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">provenance, source(s) and production process(es) used in producing a resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Lineage</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beskrivelse av hvordan produktet er fremkommet, og beskriver kilde(r) og ulike skritt i produksjonsprosessen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Målestokksfaktor</strong> Denominator</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Målestokksfaktor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KARTV</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bruk</strong></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">brief description of the resource and/or resource series usage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SSB (CoP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Relevans</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Treff på websider</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Er statistikken relevant for brukeren? Også omtale av brukerundersøkelser og rutiner for brukerkontakt</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vedleggB"><a class="anchor" href="#vedleggB"></a>Vedlegg B - Forslag til Implementering i DCAT-AP-NO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Informativ del av dette dokumentet.</p>
+</div>
+<div class="paragraph">
+<p>Dette vedlegget inneholder først forslag til hvordan beskrivelse av kvalitet på datasett skal kunne implementeres i DCAT-AP-NO. Vedlegget inneholder deretter eksempler på hvordan selve beskrivelsene kan uttrykkes ved å bruke DQV. Kapittel <a href="#Komplett">Kompletthet/Dekning</a> med <a href="#Underdekning">Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</a> og kvalitetsmålene der under, viser et relativt komplett eksempel på hva som trengs for å beskrive “Dekning” ved å bruke DQV.</p>
+</div>
+<div class="paragraph">
+<p>Navnerom (<em>namespaces</em>) som er brukt i eksemplene er ikke kvalitetssikret. Navnerom “xxx” er brukt der vi foreløpig ikke fant relevante etablerte vokabular (og dermed bør det opprettes norske vokabularer før de eventuelt kommer inn i relevante internasjonale vokabularer).</p>
+</div>
+<div class="sect2">
+<h3 id="_implementering_i_dcat_ap_no"><a class="anchor" href="#_implementering_i_dcat_ap_no"></a>Implementering i DCAT-AP-NO</h3>
+<div class="paragraph">
+<p>I løsningsforslaget til implementering i DCAT-AP-NO baserer vi oss på  prinsippene for RDFS-modellering. En står derfor fritt til å legge til egenskaper som ikke er omtalt i spesifikasjonen. Størst mulig grad av gjenbruk av eksisterende vokabularer er en selvsagt forutsetning.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/bilde1_kvalitetsbeskrivelser_dqv.jpg" alt="bilde1 kvalitetsbeskrivelser dqv">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Gjengivelse av figur 1 Kvalitetsbeskrivelser ved å -bruke DQV.</em></p>
+</div>
+<div class="paragraph">
+<p>Jf. figuren ovenfor som er gjengitt fra kapittel <a href="#Begreper">Begreper og definisjoner</a>, foreslår vi følgende:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Beskrivelse av kvantiserbar kvalitet implementeres i DCAT-AP-NO på følgende måte:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Det føyes til et nytt felt i DCAT-AP-NO, med:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>URI: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityMeasurement">dqv:hasQualityMeasurement</a></p>
+</li>
+<li>
+<p>Range: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement">dqv:QualityMeasurement</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Fritekst-kommentar til et kvantitativt måleresultat beskrives ved å bruke <a href="https://www.w3.org/2009/08/skos-reference/skos.html#note">skos:note</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Beskrivelse av kvalitet som er i samsvar med gitt(e) standard(er)/spesifikasjon(er) implementeres i DCAT-AP-NO på følgende måte:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Bruk eksisterende felt i DCAT-AP-NO v.1.1, <a href="https://doc.difi.no/dcat-ap-no/#datasett-i-samsvar-med">Datasett: i samsvar med</a></p>
+</li>
+<li>
+<p>Der relevant, oppgis hvilke(n) kvalitetsdimensjon(er) standarden/spesifikasjonen dekker, ved å bruke <a href="https://www.w3.org/TR/vocab-dqv/#dqv:inDimension">dqv:inDimension</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Kvalitetsnote (for ikke-kvantiserbar kvalitet) implementeres i DCAT-AP-NO på følgende måte:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Det føyes til et nytt felt i DCAT-AP-NO, med:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>URI: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityAnnotation">dqv:hasQualityAnnotation</a></p>
+</li>
+<li>
+<p>Range: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityAnnotation">dqv:QualityAnnotation</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Selve tekstlig beskrivelse inkluderes (ved å bruke <a href="https://www.w3.org/TR/annotation-vocab/#hasbody">oa:hasBody</a>) i <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityAnnotation">dqv:QualityAnnotation</a>, som en “body” (som en <a href="https://www.w3.org/TR/annotation-vocab/#textualbody">oa:TextualBody</a>)</p>
+</li>
+<li>
+<p>I henhold til DQV skal det i/fra <a href="https://www.w3.org/TR/vocab-dqv/#dqv:QualityAnnotation">dqv:QualityAnnotation</a> oppgis motivasjon (ved å bruke <a href="https://www.w3.org/TR/annotation-vocab/#motivatedby">oa:motivatedBy</a>) hvorav <a href="https://www.w3.org/TR/vocab-dqv/#dqv:qualityAssessment">dqv:QualityAssessment</a> er minimum å oppgi som motivasjon.</p>
+</li>
+<li>
+<p>Der relevant, oppgis hvilke(n) kvalitetsdimensjon(er) kvalitetsnoten dekker, ved å bruke <a href="https://www.w3.org/TR/vocab-dqv/#dqv:inDimension">dqv:inDimension</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Brukertilbakemeldinger relatert til kvalitet på datasett implementeres i DCAT-AP-NO på følgende måte:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kvalitetsrelaterte brukertilbakemeldinger angis ved å bruke samme feltet som foreslått under forrige kulepunkt for Kvalitetsnote, men med <a href="https://www.w3.org/TR/vocab-dqv/#dqv:UserQualityFeedback">dqv:UserQualityFeedback</a> som range, dvs.:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>URI: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:hasQualityAnnotation">dqv:hasQualityAnnotation</a></p>
+</li>
+<li>
+<p>Range: <a href="https://www.w3.org/TR/vocab-dqv/#dqv:UserQualityFeedback">dqv:UserQualityFeedback</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>dqv:UserQualityFeedback er i henhold til DQV en subklasse av dqv:QualityAnnotation, og arver dermed egenskapene fra dqv:QualityAnnotation for å håndtere selve tekstlig beskrivelse og ev. angivelse av kvalitetsdimensjon(er) - jf. kulepunktet ovenfor om Kvalitetsnote.</p>
+</li>
+<li>
+<p>For brukertilbakemeldinger skal det oppgis motivasjon utover dqv:qualityAssessment i tråd med <a href="https://www.w3.org/TR/2016/CR-annotation-model-20160705/#motivation-and-purpose">vokabular for motivasjon og formål</a> definert i  W3Cs Web Annotations Data model. Merk at en her definerer om brukertilbakemeldingen for eksempel er et spørsmål eller et svar (fra andre brukere eller fra utgiver selv).</p>
+</li>
+<li>
+<p>Vi anbefaler (ev. vurderer å gjøre obligatorisk senere) å oppgi skaper/avsender og dato for brukertilbakemeldinger ved å benytte dct:creator og dct:created</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eksempel på brukertilbakemelding:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre> :myDataset
+    a dcat:dataset ;
+    dqv:hasQualityAnnotation :userFeedback .
+
+ :userFeedback
+    a dqv:UserQualityFeedback ;
+    dct:creator "Donald Duck" ;
+    dct:created "2017-09-13"^^xsd:date ;
+    oa:hasBody :usabilityComment ;
+    oa:motivatedBy dqv:qualityAssessment, oa:commenting .
+
+ :usabilityComment
+    a oa:TextualBody ;
+    rdf:value “Dette datasettet er uegnet for ...” ;
+    dct:language “nb” ;
+    dct:format “text/plain” .</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/KlasseneIDQV.png" alt="KlasseneIDQV">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figur 3: Datamodell som viser de mest relevante klassene i DQV (kilde: <a href="https://www.w3.org/TR/vocab-dqv/DataQuality0.2.9.svg">W3C DQV</a>).</em></p>
+</div>
+<div class="paragraph">
+<p>Jf. figuren ovenfor som er kopiert fra W3C DQV, har arbeidsgruppen i første omgang ikke valgt å standardisere/spesifisere implementering av QualityPolicy og Prov (provenance) som også er i DQV-modellen ovenfor. Dette fordi det i denne omgangen ikke er identifisert konkrete behov/brukerhistorier knyttet til disse. Dette utelukker ikke mulighet for den enkelte virksomheten/sektoren å beskrive kvalitet i form av QualityPolicy og Prov (provenance) slik DQV har definert det. Informer gjerne Difi om erfaringer på dette.</p>
+</div>
+<div class="paragraph">
+<p>Arbeidsgruppen antar at det vil være behov for å beskrive kvalitet både knyttet til datasett (dcat:dataset) og for distribusjoner (dcat:distribution). Arbeidsgruppen anbefaler at kvalitetsbeskrivelser knyttes til datasett (dcat:dataset) i størst mulig grad. Unntaket er når beskrivelsene eksplisitt gjelder leveransekvalitet, for eksempel beskrivelse av tilgjengelighet, aktualitet eller "conformance" for det ulike leveransene (distribusjonene) av datasettet.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Noyaktighet"><a class="anchor" href="#Noyaktighet"></a>Kvalitetsdimensjon Nøyaktighet (accuracy)</h3>
+<div class="paragraph">
+<p><strong>Merknad</strong>: Arbeidsgruppen fant ut at dette var en av de kvalitetsdimensjonene som det allerede er etablert flere parallelle (internasjonale) kvalitetsdeldimensjoner og kvalitetsmål, som også til dels er nokså fagspesifikke. Arbeidsgruppen valgte derfor ikke å bruke tid på å gå dypere langs denne dimensjonen med å eksemplifisere mer i form av kvalitetsdeldimensjoner og kvalitetsmål.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definsjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet korrekt representerer virkeligheten, for en spesifikk brukskontekst.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: The degree to which data has attributes that correctly represent the true value of the intended attribute of a concept or event in a specific context of use.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde: <a href="https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012">W3C DQV</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>: <br></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+ :accuracy
+    a dqv:Dimension ;
+    skos:prefLabel “accuracy”@en ;
+    skos:prefLabel “nøyaktighet”@nb ;
+    skos:definition “the degree to which data has attributes that correctly represent the true value of the intended attribute of a concept or event in a specific context of use”@en .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Komplett"><a class="anchor" href="#Komplett"></a>Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)</h3>
+<div class="paragraph">
+<p><strong>Merknad</strong>: Arbeidsgruppen fant ut at dette er en av de kvalitetsdimensjonene som det er mulig å bli enig om noen få felles kvalitetsdeldimensjoner og der under kvalitetsmål.</p>
+</div>
+<div class="paragraph">
+<p><strong>Merknad</strong>: “Dekning” er bredere enn “Kompletthet” (completeness fra <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">ISO/IEC 25012</a>). “Dekning” inkluderer bl.a. “Overdekning”. Termen “kompletthet” er allikevel tatt med fordi den allerede er tungt brukt i fagmiljøene.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet inneholder forventede opplysninger, for en spesifikk brukskontekst.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+ :coverage
+    a dqv:Dimension ;
+    skos:prefLabel “coverage”@en ;
+    skos:prefLabel “dekning”@nb ;
+    skos:altLabel “kompletthet”@nb ;
+    skos:definition “i hvilken grad datasettet inneholder forventede opplysninger, for en spesifikk brukskontekst”@nb .</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Underdekning"><a class="anchor" href="#Underdekning"></a>Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</h4>
+<div class="paragraph">
+<p><strong>Merknad</strong>: med noe redaksjonelt avvik tilsvarer dette ISO 19157:2013(E) Annex D.2.2.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad det mangler elementer som forventes å være med, for en spesifikk brukskontekst.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :undercoverage
+    a dqv:Dimension ;
+    skos:prefLabel “undercoverage”@en ;
+    skos:prefLabel “underdekning”@nb ;
+    skos:altLabel “omission”@en ;
+    skos:definition “the degree to which required information is missing in a particular dataset”@en ;
+    skos:broader xxx:coverage # antar at “coverage” er definert.</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_kvalitetsmål_manglende_elementer_missing_items"><a class="anchor" href="#_kvalitetsmål_manglende_elementer_missing_items"></a>Kvalitetsmål Manglende elementer (missing items)</h5>
+<div class="paragraph">
+<p><strong>Merknad</strong>: ISO 19757:2013(E) Table D.5 - Missing item definerer et kvalitetsmål på hvorvidt et gitt/spesifikt element mangler, mens det som omhandles her i dette avsnittet er et kvalitetsmål på hvorvidt det mangler noen (uspesifikke) elementer i datasettet, derfor “elementer”/“items” i flertall.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Hvorvidt det mangler noen elementer i datasettet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+#definisjon av kvalitetsmål
+
+ :missingItemsMetric
+    a dqv:Metric ;
+    skos:prefLabel “missing items metric”@en ;
+    skos:prefLabel “hvorvidt det mangler elementer”@nb ;
+    skos:definition “whether there are some items missing in a particular dataset”@en ;
+    dqv:expectedDataType xsd:boolean ;
+    dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
+
+#eksempel på angivelse av måleresultat “true” (ja, det mangler noe)
+
+ :measurementMissingItems
+    a dqv:QualityMeasurement ;
+    dqv:isMeasurementOf :missingItemsMetric ;
+    dqv:value “true”^^xsd:boolean .</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="Antall"><a class="anchor" href="#Antall"></a>Kvalitetsmål Antall manglende elementer (number of missing items)</h5>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Antall elementer som ikke er i datasettet men som forventes å være med.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+  skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+#definisjon av kvalitetsmål
+ :numberOfMissingItemsMetric
+    a dqv:Metric ;
+    skos:prefLabel “number of missing items metric”@en ;
+    skos:prefLabel “antall manglende elementer”@nb ;
+    skos:definition “number of items that are missing in the dataset”@en ;
+    dqv:expectedDataType xsd:integer ;
+    dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
+
+#eksempel på angivelse av måleresultat “8” (mangler åtte elementer)
+
+ :measurementNumerOfMissingItems
+    a dqv:QualityMeasurement ;
+    dqv:isMeasurementOf :numberOfMissingItemsMetric ;
+    dqv:value “8”^^xsd:integer .</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="Andel"><a class="anchor" href="#Andel"></a>Kvalitetsmål Andel manglende elementer (rate of missing items)</h5>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Forholdet mellom antall elementer som mangler og antall elementer som skulle være med i datasettet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+#definisjon av kvalitetsmål
+ :rateOfMissingItemsMetric
+    a dqv:Metric ;
+    skos:prefLabel “rate of missing items metric”@en ;
+    skos:prefLabel “andel manglende elementer”@nb ;
+    skos:definition “ratio between the number of items that are missing and the number of the items that should be present”@en ;
+    dqv:expectedDataType xsd:decimal ;
+    dqv:inDimension xxx:undercoverage # antar at “undercoverage” er definert .
+
+#eksempel på angivelse av måleresultat “0.08” (mangler 8%)
+
+ :measurementRateOfMissingItems
+    a dqv:QualityMeasurement ;
+    dqv:isMeasurementOf :rateOfMissingItemsMetric ;
+    dqv:value “0.08”^^xsd:decimal .</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Overdekning"><a class="anchor" href="#Overdekning"></a>Kvalitetsdeldimensjon Overdekning (overcoverage/commission)</h4>
+<div class="paragraph">
+<p>Overdekning kan defineres på helt tilsvarende måte (men “motsatt vis”) som for underdekning i avsnittet foran, dvs. om elementer som ikke skulle vært i datasettet. Arbeidsgruppen velger derfor ikke å bruke tid på å eksemplifisere denne deldimensjonen.</p>
+</div>
+<div class="paragraph">
+<p><strong>Merknad</strong>: med noe redaksjonelt avvik tilsvarer dette ISO 19157:2013(E) Annex D.2.1.</p>
+</div>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet inneholder overflødige elementer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Merknad til definisjonen</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eksklusive <a href="#dubletter">[dubletter]</a> (som er en egen kvalitetsdeldimensjon)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :overcoverage
+    a dqv:Dimension ;
+    skos:prefLabel “overcoverage”@en ;
+    skos:prefLabel “overdekning”@nb ;
+    skos:altLabel “commission”@en ;
+    skos:definition “the degree to which a particular dataset contains excess items”@en ;
+    skos:note “exclusive duplicate”@en ;
+    skos:broader xxx:coverage # antar at “coverage” er definert .</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kvalitetsdeldimensjon_selektivitet_selectivity"><a class="anchor" href="#_kvalitetsdeldimensjon_selektivitet_selectivity"></a>Kvalitetsdeldimensjon Selektivitet (selectivity)</h4>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet dekker den statistiske populasjonen.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :selectivity
+    a dqv:Dimension ;
+    skos:prefLabel “selectivity”@en ;
+    skos:prefLabel “selektivitet”@nb ;
+    skos:definition “the degree to which a particular dataset represents the statistical population”@en ;
+    skos:broader xxx:coverage # antar at “coverage” er definert .</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="dublett"><a class="anchor" href="#dublett"></a>Kvalitetsdeldimensjon Dublett (redundancy/duplicate)</h4>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet inneholder flere enn én forekomst av samme opplysning.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :redundancy
+    a dqv:Dimension ;
+    skos:prefLabel “redundancy”@en ;
+    skos:altLabel “duplicate”@en ;
+    skos:prefLabel “dublett”@nb ;
+    skos:definition “the degree to which a particular dataset contains more than one instance of the same information”@en ;
+    skos:broader xxx:coverage # antar at “coverage” er definert .</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kvalitetsdimensjon_aktualitet_currentnesstimeliness"><a class="anchor" href="#_kvalitetsdimensjon_aktualitet_currentnesstimeliness"></a>Kvalitetsdimensjon Aktualitet (currentness/timeliness)</h3>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Graden av “ferskhet” av datasettet, for en spesifikk brukskontekst.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: The degree to which data has attributes that are of the right age in a specific context of use.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde: <a href="https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012">W3C DQV</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+ :currentness
+    a dqv:Dimension ;
+    skos:prefLabel “currentness”@en ;
+    skos:altLabel “timeliness”@en ;
+    skos:prefLabel “aktualitet”@nb ;
+    skos:definition “the degree to which data has attributes that are of the right age in a specific context of use”@en .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kvalitetsdimensjon_samsvar_complianceconformity"><a class="anchor" href="#_kvalitetsdimensjon_samsvar_complianceconformity"></a>Kvalitetsdimensjon Samsvar (compliance/conformity)</h3>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet er i samsvar med standarder, konvensjoner, regler eller lignende som regulerer datakvalitet, for en spesifikk brukskontekst.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: The degree to which data has attributes that adhere to standards, conventions or regulations in force and similar rules relating to data quality in a specific context of use.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde: <a href="https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012">W3C DQV</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+ :compliance
+    a dqv:Dimension ;
+    skos:prefLabel “compliance”@en ;
+    skos:altLabel “conformity”@en ;
+    skos:prefLabel “samsvar”@nb ;
+    skos:definition “the degree to which data has attributes that adhere to standards, conventions or regulations in force and similar rules relating to data quality in a specific context of use”@en .</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_kvalitetsbeskrivelse_i_samsvar_med_conforms_to"><a class="anchor" href="#_kvalitetsbeskrivelse_i_samsvar_med_conforms_to"></a>Kvalitetsbeskrivelse I samsvar med (conforms to)</h4>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Datasettet er i samsvar med gitt standard, spesifikasjon, regel og lignende</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>: <br></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dcat: &lt;https://www.w3.org/ns/dcat#&gt; .
+@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix dcterms: &lt;http://dublincore.org/documents/dcmi-terms/&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/spec/&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :myDataset
+    a dcat:dataset ;
+    dcterms:conformsTo :aQualityStandard .
+
+ :aQualityStandard
+    a dcterms:Standard ;
+    dcterms:title "Standard for ..."@en ;
+    dcterms:comment “The standard defines ...”@en ;
+    dcterms:issued "2017-08-01"^^xsd:date ;
+    foaf:page &lt;https://path.ToThe.Standard/aStandard&gt; ;
+    dqv:inDimension xxx:compliance # antar at “compliance” er definert .</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kvalitetsdimensjon_tilgjengelighet_availability"><a class="anchor" href="#_kvalitetsdimensjon_tilgjengelighet_availability"></a>Kvalitetsdimensjon Tilgjengelighet (availability)</h3>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet kan nåes av brukere og/eller dataapplikasjoner, for en spesifikk brukskontekst.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: The degree to which data has attributes that enable it to be retrieved by authorized users and/or applications in a specific context of use.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde: <a href="https://www.w3.org/TR/vocab-dqv/#DimensionsOfISOIEC25012">W3C DQV</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>: <br></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+:availability
+    a dqv:Dimension ;
+    skos:prefLabel “availability”@en ;
+    skos:prefLabel “tilgjengelighet”@nb ;
+    skos:definition “the degree to which data has attributes that enable it to be retrieved by users and/or applications in a specific context of use”@en .</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_kvalitetsdimensjon_relevans_relevancy"><a class="anchor" href="#_kvalitetsdimensjon_relevans_relevancy"></a>Kvalitetsdimensjon Relevans (relevancy)</h3>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I hvilken grad datasettet inneholder data som dekker behov, for en spesifikk brukskontekst.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Engelsk original: Relevancy refers to the provision of information which is in accordance with the task at hand and important to the users’ query.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Kilde: <a href="https://www.w3.org/TR/vocab-dqv/#DimensionsofZaveri">W3C DQV</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+
+ :relevancy
+    a dqv:Dimension ;
+    skos:prefLabel “relevancy”@en ;
+    skos:prefLabel “relevans”@nb ;
+    skos:definition “the provision of information which is in accordance with the task at hand and important to the users”@en .</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage"><a class="anchor" href="#_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage"></a>Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)</h4>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fritekst beskrivelse av hva datasettet er opprettet/innsamlet for</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dcat: &lt;https://www.w3.org/ns/dcat#&gt; .
+@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix dc: &lt;http://dublincore.org/documents/dces/&gt; .
+@prefix oa: &lt;http://www.w3.org/ns/oa#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :myDataset
+    a dcat:dataset ;
+    dqv:hasQualityAnnotation :usageAnnotation .
+
+ :usageAnnotation
+    a dqv:QualityAnnotation ;
+    skos:prefLabel “usability”@en ;
+    skos:prefLabel “egnethet”@nb ;
+    skos:definition “hva datasettet er opprettet/innsamlet for”@nb ;
+    dqv:inDimension xxx:relevancy # antar at “relevancy” er definert ;
+    oa:hasBody :usageDescription ;
+    oa:motivatedBy dqv:qualityAssessment .
+
+ :usageDescription
+    a oa:TextualBody ;
+    rdf:value “datasettet er opprettet for ...” ;
+    dc:language “nb” ;
+    dc:format “text/plain” .</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ikke_kvantitativfritekst_beskrivelse_egnethet_usability"><a class="anchor" href="#_ikke_kvantitativfritekst_beskrivelse_egnethet_usability"></a>Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)</h4>
+<div class="paragraph">
+<p><strong>Definisjon</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fritekst beskrivelse av hva datasettet er, og ikke er, egnet til</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Uttrykt i DQV</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@prefix dcat: &lt;https://www.w3.org/ns/dcat#&gt; .
+@prefix dqv: &lt;https://www.w3.org/TR/vocab-dqv/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix dc: &lt;http://dublincore.org/documents/dces/&gt; .
+@prefix oa: &lt;http://www.w3.org/ns/oa#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix xsd: &lt;https://www.w3.org/TR/xmlschema11-2/&gt; .
+@prefix xxx: &lt;https://ikke.eksisterer.enda/pre_def_kvalitetsmaal/&gt; ;
+skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets(del)dimensjoner og kvalitetsmål som kan refereres med en URI”@nb .
+
+ :myDataset
+    a dcat:dataset ;
+    dqv:hasQualityAnnotation :usageAnnotation .
+
+ :usabilityAnnotation
+    a dqv:QualityAnnotation ;
+    skos:prefLabel “usability”@en ;
+    skos:prefLabel “egnethet”@nb ;
+    skos:definition “hva datasettet er, og ikke er, egnet til”@nb ;
+    dqv:inDimension xxx:relevancy # antar at “relevancy” er definert ;
+    oa:hasBody :usabilityDescription ;
+    oa:motivatedBy dqv:qualityAssessment .
+
+ :usabilityDescription
+    a oa:TextualBody ;
+    rdf:value “datasettet er best egnet for å beregne …, men kan by på utfordringer når det også brukes til å analysere ...” ;
+    dc:language “nb” ;
+    dc:format “text/plain” .</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vedlegg_c_uriernavnerom_som_er_brukt"><a class="anchor" href="#_vedlegg_c_uriernavnerom_som_er_brukt"></a>Vedlegg C - URIer/navnerom som er brukt</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Prefiks</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Navnerom</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Beskrivelse</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dqv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-dqv/">https://www.w3.org/TR/vocab-dqv/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Quality Vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://dublincore.org/documents/dces/">http://dublincore.org/documents/dces/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Metadata Element Set</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dcterms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://dublincore.org/documents/dcmi-terms/">http://dublincore.org/documents/dcmi-terms/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dublin Core Metadata Terms</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dcat</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/ns/dcat#">https://www.w3.org/ns/dcat#</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data Catalog Vocabulary (DCAT)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">duv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/vocab-duv/">https://www.w3.org/TR/vocab-duv/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dataset Usage Vocabulary (duv)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">foaf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://xmlns.com/foaf/spec/">http://xmlns.com/foaf/spec/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Friend-of-a-Friend Vocabulary</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/ns/oa#">http://www.w3.org/ns/oa#</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Web Annotation Data Model</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">skos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2004/02/skos/core#">http://www.w3.org/2004/02/skos/core#</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simple Knowledge Organization System</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rdf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource Description Framework (RDF)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rdfs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDF Schema</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xsd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.w3.org/TR/xmlschema11-2/">https://www.w3.org/TR/xmlschema11-2/</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XML Schema Datatypes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xxx</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vokabular som ikke finnes, men som  trengs etablert</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vedlegg_d_referanser"><a class="anchor" href="#_vedlegg_d_referanser"></a>Vedlegg D - Referanser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Informativ del av dette dokumentet.</p>
+</div>
+<div class="paragraph">
+<p>I dette vedlegget tas med referanser som er aktuelle, men ikke tatt med som normative referanser i dette dokumentet. Referanser er tatt med i en usortert/uprioritert rekkefølge.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ISO/IEC 25012, Software engineering&#8201;&#8212;&#8201;Software product Quality Requirements and Evaluation (SQuaRE)&#8201;&#8212;&#8201;Data quality model, <a href="http://iso25000.com/index.php/en/iso-25000-standards/iso-25012">http://iso25000.com/index.php/en/iso-25000-standards/iso-25012</a></p>
+</li>
+<li>
+<p>ISO 19157:2013, Geographic information&#8201;&#8212;&#8201;Data quality, <a href="http://www.standard.no/no/Nettbutikk/produktkatalogen/Produktpresentasjon/?ProductID=672821">http://www.standard.no/no/Nettbutikk/produktkatalogen/Produktpresentasjon/?ProductID=672821</a></p>
+</li>
+<li>
+<p>EU, BLUE-ETS <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup>, <a href="https://www.blue-ets.istat.it/fileadmin/deliverables/Deliverable4.1.pdf" class="bare">https://www.blue-ets.istat.it/fileadmin/deliverables/Deliverable4.1.pdf</a>.</p>
+</li>
+<li>
+<p>Eurostat, European Statistics Code of Practice (CoP), <a href="http://ec.europa.eu/eurostat/web/quality/european-statistics-code-of-practice">http://ec.europa.eu/eurostat/web/quality/european-statistics-code-of-practice</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vedleggE"><a class="anchor" href="#vedleggE"></a>Vedlegg E - Arbeidsgruppen</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Informativ del av dette dokumentet.</p>
+</div>
+<div class="sect2">
+<h3 id="_beskrivelse_av_arbeidsgruppens_oppgave"><a class="anchor" href="#_beskrivelse_av_arbeidsgruppens_oppgave"></a>Beskrivelse av arbeidsgruppens oppgave</h3>
+<div class="paragraph">
+<p>Arbeidsgruppen fikk i oppgave å utarbeide en spesifikasjon for hvordan kvalitet på datasett skal beskrives i en datakatalog.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sammensetning_av_arbeidsgruppen"><a class="anchor" href="#_sammensetning_av_arbeidsgruppen"></a>Sammensetning av arbeidsgruppen</h3>
+<div class="paragraph">
+<p>Kartverket ved Morten Borrebæk har ledet denne arbeidsgruppen. Følgende etater og personer har ellers vært involvert i arbeidet:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Virksomhet</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Person</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kartverket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Morten Borrebæk (leder av arbeidsgruppen)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arkivverket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Joachim Fugleberg</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brønnøysundregistrene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Espen Slotvik</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Difi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Martin Standley, Jim J. Yang, Øystein Åsnes, Pia Jøsendal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Politiet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arne Dybdahl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Skattedirektoratet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Katrine Fredriksen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statens lånekasse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Liv Bergliot Simonsen, Gustav Aagesen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statens vegvesen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cecilie H. Bratt, Hilde Austlid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statistisk sentralbyrå</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hans Viggo Sæbø</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Kopimottakere:</em></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Direktoratet for e_</em>-helse_</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Åsmund Ahlmann Nyre</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Statens pensjonskasse</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Andrea Halvorsen, Margaret McLeod</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Mot slutten av arbeidet ble det etablert en mindre arbeidsgruppe som fikk i oppgave å foreslå hvordan det foreslåtte faglige innholdet skal kunne representeres ved hjelp av DQV og implementeres i DCAT-AP-NO. Den mindre arbeidsgruppen har bestått av følgende etater/personer:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Virksomhet</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Person</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Kartverket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Morten Borrebæk (leder)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Brønnøysundregistrene</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">David Norheim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Difi</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Martin Standley, Jim J. Yang, Øystein Åsnes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Statistisk sentralbyrå</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hans Viggo Sæbø</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_arbeid_i_arbeidsgruppen"><a class="anchor" href="#_arbeid_i_arbeidsgruppen"></a>Arbeid i arbeidsgruppen</h3>
+<div class="paragraph">
+<p>Arbeidsgruppen startet sitt arbeid fra 25. januar 2017. Har hatt halvdagsmøter ca. annen hver uke.</p>
+</div>
+<div class="paragraph">
+<p>I perioden frem til sommeren 2017 har arbeidsgruppen hovedsakelig jobbet med:
+ * Utvekslet erfaringer fra deltagende virksomheter på datakvalitet og måling av datakvalitet
+Sett spesielt på relevante internasjonale standarder/spesifikasjoner, på området datakvalitet og beskrivelse av datakvalitet, deriblant W3C DQV, ISO/IEC 25012, ISO 19157, BLUE-ETS, CoP.
+ * Foreslått en standardisert måte å beskrive kvalitet på datasett (se #heading=h.9auauka2obwd[4 Standardisert metode for å beskrive kvalitet på datasett])
+ * Foreslått noen få hoveddimensjoner og deldimensjoner av datasettkvalitet (se #heading=h.mlfyh2ml9hmk[5 Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål])</p>
+</div>
+<div class="paragraph">
+<p>I sommeren 2017, har en mindre arbeidsgruppe jobbet med:
+ * Eksemplifisering av kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål ved å bruke W3C DQV.
+ * Forslag til hvordan dette implementeres i DCAT-AP-NO.</p>
+</div>
+<div class="paragraph">
+<p>Arbeidet ble avsluttet 13. september 2017.</p>
 </div>
 <!-- Google Analytics -->
 <script>
@@ -521,9 +2407,31 @@ ga('send', 'pageview');
 </div>
 </div>
 </div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. DQV (Data Quality Vocabulary) er i skrivende stund ikke en anbefaling fra W3C ennå, men kun et “arbeidsgruppenotat”.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. DUV (Dataset Usage Vocabulary) er i skrivende stund ikke en anbefaling fra W3C ennå, men kun et “arbeidsgruppenotat”.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. EU har i “Commission Implementing Decision (EU) 2017/1358 of 20 July 2017” besluttet å kunne bruke SKOS i offentlige anskaffelser.  <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1500883656509&amp;uri=CELEX:32017D1358" class="bare">http://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1500883656509&amp;uri=CELEX:32017D1358</a>
+</div>
+<div class="footnote" id="_footnotedef_4">
+<a href="#_footnoteref_4">4</a>. For å kunne referere til pre-definerte kvalitetsmål, foreslås det å etablere en “Felles oversikt over definisjoner av kvalitetsmål” (dermed også et kontrollert vokabular). Ved behov kan den enkelte etaten definere nye kvalitetsmål, som så legges inn i felles oversikt, for gjenbruk av andre.
+</div>
+<div class="footnote" id="_footnotedef_5">
+<a href="#_footnoteref_5">5</a>. Med noe ulik ordvalg, er dimensjonene også definert i Eurostats oppdaterte definisjonsdatabase <a href="http://ec.europa.eu/eurostat/ramon/index.cfm?TargetUrl=DSP_PUB_WELC">RAMON</a>, som i stor grad er basert på SDMX som er referert til i <a href="https://joinup.ec.europa.eu/node/147940">StatDCAT-AP</a>.
+</div>
+<div class="footnote" id="_footnotedef_6">
+<a href="#_footnoteref_6">6</a>. BLUE-ETS er et prosjekt under EUs program Framework Programme 7: BLUE - Enterprise and Trade Statistics, hvor en bl.a. så på kvalitetskriterier for administrative datasett brukt til produksjon av offisiell statistikk.
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Sist oppdatert 2020-06-09 12:44:51 UTC
+Sist oppdatert 2020-06-11 12:18:31 UTC
 </div>
 </div>
 </body>

@@ -1,4 +1,3 @@
-
 = Normative referanser
 
 Difi, DCAT-AP-NO, Standard for beskrivelse av datasett og datakataloger, 11.10.2016.

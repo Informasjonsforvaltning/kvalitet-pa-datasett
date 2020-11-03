@@ -18,7 +18,11 @@ image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
 include::shared/download.adoc[]
 
-*Publisert*: september 2017
+*Status*: [yellow-background]#utgått# +
+*Publisert*: september 2017 +
+*Oppdatert*: 3. november 2020
+
+IMPORTANT: Denne spesifikasjonen er [yellow-background]#utgått#. Se https://data.norge.no/specification/dqv-ap-no/[DQV-AP-NO] som implementerer kravene i denne spesifikasjonen.
 
 :leveloffset: +1
 

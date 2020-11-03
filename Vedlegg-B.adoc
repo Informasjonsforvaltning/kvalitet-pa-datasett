@@ -21,7 +21,7 @@ Jf. figuren ovenfor som er gjengitt fra kapittel <<Begreper og definisjoner>>, f
  *** Range: https://www.w3.org/TR/vocab-dqv/#dqv:QualityMeasurement[dqv:QualityMeasurement]
  ** Fritekst-kommentar til et kvantitativt måleresultat beskrives ved å bruke https://www.w3.org/2009/08/skos-reference/skos.html#note[skos:note]
  * Beskrivelse av kvalitet som er i samsvar med gitt(e) standard(er)/spesifikasjon(er) implementeres i DCAT-AP-NO på følgende måte:
- ** Bruk eksisterende felt i DCAT-AP-NO v.1.1, https://doc.difi.no/dcat-ap-no/#datasett-i-samsvar-med[Datasett: i samsvar med]
+ ** Bruk eksisterende felt i DCAT-AP-NO v.1.1, https://data.norge.no/specification/dcat-ap-no/v1.1/#datasett-i-samsvar-med[Datasett: i samsvar med]
  ** Der relevant, oppgis hvilke(n) kvalitetsdimensjon(er) standarden/spesifikasjonen dekker, ved å bruke https://www.w3.org/TR/vocab-dqv/#dqv:inDimension[dqv:inDimension].
  * Kvalitetsnote (for ikke-kvantiserbar kvalitet) implementeres i DCAT-AP-NO på følgende måte:
  ** Det føyes til et nytt felt i DCAT-AP-NO, med:

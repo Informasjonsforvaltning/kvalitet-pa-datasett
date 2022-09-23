@@ -1,9 +1,9 @@
-name: build adocs and publish to GitHub pages
+name: build adocs and publish v1 to production (legacy)
 
 on:
   push:
     branches:
-      - develop
+      - v1
     paths:
       - docs/**
   workflow_dispatch:
@@ -14,7 +14,9 @@ jobs:
     name: asciidoctor build
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+        with:
+          ref: v1
 
       - name: Build html
         id: adocbuild
@@ -26,11 +28,12 @@ jobs:
         id: adocbuild_pdf
         uses: avattathil/asciidoctor-action@master
         with:
-          program: "asciidoctor-pdf -D docs -o files/kvalitet_pa_datasett.pdf -a lang=nb docs/main.adoc"
+          program: "asciidoctor-pdf -D docs -o files/kvalitet-pa-datasett.pdf -a lang=nb docs/main.adoc"
         continue-on-error: true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: html
           publish_dir: ./docs

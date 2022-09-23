@@ -41,7 +41,7 @@ jobs:
           api-key: ${{ secrets.STATIC_RDF_SERVER_API_KEY_STAGING }}
           files: |
             docs/index.html text/html nb
-            docs/files/kvalitet_pa_datasett.pdf application/pdf nb files/kvalitet_pa_datasett.pdf
+            docs/files/kvalitet-pa-datasett.pdf application/pdf nb files/kvalitet-pa-datasett.pdf
             docs/images/digitaliseringsdirektoratet.png image/png nb images/digitaliseringsdirektoratet.png
             docs/images/bilde1_kvalitetsbeskrivelser_dqv.jpg image/jpeg nb images/bilde1_kvalitetsbeskrivelser_dqv.jpg
             docs/images/Eksempler_kvalitetsdimensjoner.png image/png nb images/Eksempler_kvalitetsdimensjoner.png

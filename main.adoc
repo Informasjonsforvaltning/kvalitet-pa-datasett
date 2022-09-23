@@ -1,6 +1,8 @@
 include::locale/attributes.adoc[]
-= Spesifikasjonsmal
-:description: Mal for bruk til nye spesifikasjoner som er laga i asciidoc.
+
+= Spesifikasjon for beskrivelse av kvalitet på datasett
+Versjon 1.0
+:description: Spesifikasjon for beskrivelse av kvalitet på datasett
 :doctype: book
 :docinfo:
 :icons: font
@@ -9,17 +11,41 @@ include::locale/attributes.adoc[]
 :sectanchors:
 :imagesdir: images
 :title-logo-image: image:digitaliseringsdirektoratet.png[pdfwidth=30vw]
+// :sectnums:
+:sectnumlevels: 5
 
 image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
-Publisert: 2020-03-05
-
-WARNING: Dette er mal-dokument for andre spesifikasjoner.
-
 include::shared/download.adoc[]
 
-// Innhold her. Feks ei fil pr kapittel:
-include::forord.adoc[]
-include::kapittel_1.adoc[]
+*Status*: [yellow-background]#utgått# +
+*Publisert*: september 2017 +
+*Oppdatert*: 3. november 2020
+
+IMPORTANT: Denne spesifikasjonen er [yellow-background]#utgått#. Se https://data.norge.no/specification/dqv-ap-no/[DQV-AP-NO] som implementerer kravene i denne spesifikasjonen.
+
+:leveloffset: +1
+
+// Innhold her.
+
+include::Omfang-og-avgrensning.adoc[]
+
+include::Normative-referanser.adoc[]
+
+include::Begreper-og-definisjoner.adoc[]
+
+include::Standardisert-metode.adoc[]
+
+include::Vedlegg-A.adoc[]
+
+include::Vedlegg-B.adoc[]
+
+include::Vedlegg-C.adoc[]
+
+include::Vedlegg-D.adoc[]
+
+include::Vedlegg-E.adoc[]
+
+
 
 include::shared/stats.adoc[]

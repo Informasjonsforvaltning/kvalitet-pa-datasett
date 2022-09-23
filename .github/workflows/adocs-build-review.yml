@@ -26,7 +26,7 @@ jobs:
         id: adocbuild_pdf
         uses: avattathil/asciidoctor-action@master
         with:
-          program: "asciidoctor-pdf -D docs -o files/kvalitet_pa_datasett.pdf -a lang=nb docs/main.adoc"
+          program: "asciidoctor-pdf -D docs -o files/kvalitet-pa-datasett.pdf -a lang=nb docs/main.adoc"
         continue-on-error: true
 
       - name: Deploy

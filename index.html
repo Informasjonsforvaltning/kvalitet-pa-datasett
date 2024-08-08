@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <meta name="description" content="Spesifikasjon for beskrivelse av kvalitet på datasett">
 <meta name="author" content="Versjon 1.0">
 <title>Spesifikasjon for beskrivelse av kvalitet på datasett</title>
@@ -86,10 +86,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -142,7 +142,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -164,6 +164,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -210,13 +211,10 @@ table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
 .exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
-.exampleblock>.content>:first-child{margin-top:0}
-.exampleblock>.content>:last-child{margin-bottom:0}
 .sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
-.sidebarblock>:first-child{margin-top:0}
-.sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
 .literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
@@ -332,7 +330,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -395,7 +393,7 @@ b.conum *{color:inherit!important}
 dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
 h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
 p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
-p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
 p{margin-bottom:1.25rem}
 .sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
 .exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
@@ -532,7 +530,7 @@ Denne spesifikasjonen er <span class="yellow-background">utgått</span>. Se <a h
 </div>
 </div>
 <div class="sect1">
-<h2 id="_omfang_og_avgrensning"><a class="anchor" href="#_omfang_og_avgrensning"></a>Omfang og avgrensning</h2>
+<h2 id="_omfang_og_avgrensning"><a class="link" href="#_omfang_og_avgrensning">Omfang og avgrensning</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dokumentet inneholder en spesifikasjon til hvordan man skal beskrive kvalitet på datasett i en datakatalog.</p>
@@ -552,7 +550,7 @@ Denne spesifikasjonen er <span class="yellow-background">utgått</span>. Se <a h
 </div>
 </div>
 <div class="sect1">
-<h2 id="_normative_referanser"><a class="anchor" href="#_normative_referanser"></a>Normative referanser</h2>
+<h2 id="_normative_referanser"><a class="link" href="#_normative_referanser">Normative referanser</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Difi, DCAT-AP-NO, Standard for beskrivelse av datasett og datakataloger, 11.10.2016.</p>
@@ -572,7 +570,7 @@ Denne spesifikasjonen er <span class="yellow-background">utgått</span>. Se <a h
 </div>
 </div>
 <div class="sect1">
-<h2 id="Begreper"><a class="anchor" href="#Begreper"></a>Begreper og definisjoner</h2>
+<h2 id="Begreper"><a class="link" href="#Begreper">Begreper og definisjoner</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Med “kvalitet” (f.eks. i ordene “kvalitetsdimensjon” og “kvalitetsmål”) menes det i dette dokumentet “datakvalitet”, “kvalitet på datasett” og lignende, men ikke “kvalitet” generelt.</p>
@@ -773,7 +771,7 @@ Denne spesifikasjonen er <span class="yellow-background">utgått</span>. Se <a h
 </div>
 </div>
 <div class="sect1">
-<h2 id="_standardisert_metode_for_å_beskrive_kvalitet_på_datasett"><a class="anchor" href="#_standardisert_metode_for_å_beskrive_kvalitet_på_datasett"></a>Standardisert metode for å beskrive kvalitet på datasett</h2>
+<h2 id="_standardisert_metode_for_å_beskrive_kvalitet_på_datasett"><a class="link" href="#_standardisert_metode_for_å_beskrive_kvalitet_på_datasett">Standardisert metode for å beskrive kvalitet på datasett</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Arbeidsgruppen foreslår følgende når det gjelder beskrivelse av kvalitet på datasett i en datakatalog:</p>
@@ -836,7 +834,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 </div>
 </div>
 <div class="sect1">
-<h2 id="dimensjonene"><a class="anchor" href="#dimensjonene"></a>Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål</h2>
+<h2 id="dimensjonene"><a class="link" href="#dimensjonene">Vedlegg A - Forslag til kvalitetsdimensjoner, kvalitetsdeldimensjoner og kvalitetsmål</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Informativ del av dette dokumentet.</p>
@@ -1340,7 +1338,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 </div>
 </div>
 <div class="sect1">
-<h2 id="vedleggB"><a class="anchor" href="#vedleggB"></a>Vedlegg B - Forslag til Implementering i DCAT-AP-NO</h2>
+<h2 id="vedleggB"><a class="link" href="#vedleggB">Vedlegg B - Forslag til Implementering i DCAT-AP-NO</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Informativ del av dette dokumentet.</p>
@@ -1352,7 +1350,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 <p>Navnerom (<em>namespaces</em>) som er brukt i eksemplene er ikke kvalitetssikret. Navnerom “xxx” er brukt der vi foreløpig ikke fant relevante etablerte vokabular (og dermed bør det opprettes norske vokabularer før de eventuelt kommer inn i relevante internasjonale vokabularer).</p>
 </div>
 <div class="sect2">
-<h3 id="_implementering_i_dcat_ap_no"><a class="anchor" href="#_implementering_i_dcat_ap_no"></a>Implementering i DCAT-AP-NO</h3>
+<h3 id="_implementering_i_dcat_ap_no"><a class="link" href="#_implementering_i_dcat_ap_no">Implementering i DCAT-AP-NO</a></h3>
 <div class="paragraph">
 <p>I løsningsforslaget til implementering i DCAT-AP-NO baserer vi oss på  prinsippene for RDFS-modellering. En står derfor fritt til å legge til egenskaper som ikke er omtalt i spesifikasjonen. Størst mulig grad av gjenbruk av eksisterende vokabularer er en selvsagt forutsetning.</p>
 </div>
@@ -1504,7 +1502,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 </div>
 </div>
 <div class="sect2">
-<h3 id="Noyaktighet"><a class="anchor" href="#Noyaktighet"></a>Kvalitetsdimensjon Nøyaktighet (accuracy)</h3>
+<h3 id="Noyaktighet"><a class="link" href="#Noyaktighet">Kvalitetsdimensjon Nøyaktighet (accuracy)</a></h3>
 <div class="paragraph">
 <p><strong>Merknad</strong>: Arbeidsgruppen fant ut at dette var en av de kvalitetsdimensjonene som det allerede er etablert flere parallelle (internasjonale) kvalitetsdeldimensjoner og kvalitetsmål, som også til dels er nokså fagspesifikke. Arbeidsgruppen valgte derfor ikke å bruke tid på å gå dypere langs denne dimensjonen med å eksemplifisere mer i form av kvalitetsdeldimensjoner og kvalitetsmål.</p>
 </div>
@@ -1549,7 +1547,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 </div>
 </div>
 <div class="sect2">
-<h3 id="Komplett"><a class="anchor" href="#Komplett"></a>Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)</h3>
+<h3 id="Komplett"><a class="link" href="#Komplett">Kvalitetsdimensjon Kompletthet/Dekning (completeness/coverage)</a></h3>
 <div class="paragraph">
 <p><strong>Merknad</strong>: Arbeidsgruppen fant ut at dette er en av de kvalitetsdimensjonene som det er mulig å bli enig om noen få felles kvalitetsdeldimensjoner og der under kvalitetsmål.</p>
 </div>
@@ -1583,7 +1581,7 @@ Kvantiserbar kvalitet beskrives dessuten ved å referere <sup class="footnote">[
 </div>
 </div>
 <div class="sect3">
-<h4 id="Underdekning"><a class="anchor" href="#Underdekning"></a>Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</h4>
+<h4 id="Underdekning"><a class="link" href="#Underdekning">Kvalitetsdeldimensjon Underdekning (undercoverage/omission)</a></h4>
 <div class="paragraph">
 <p><strong>Merknad</strong>: med noe redaksjonelt avvik tilsvarer dette ISO 19157:2013(E) Annex D.2.2.</p>
 </div>
@@ -1617,7 +1615,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect4">
-<h5 id="_kvalitetsmål_manglende_elementer_missing_items"><a class="anchor" href="#_kvalitetsmål_manglende_elementer_missing_items"></a>Kvalitetsmål Manglende elementer (missing items)</h5>
+<h5 id="_kvalitetsmål_manglende_elementer_missing_items"><a class="link" href="#_kvalitetsmål_manglende_elementer_missing_items">Kvalitetsmål Manglende elementer (missing items)</a></h5>
 <div class="paragraph">
 <p><strong>Merknad</strong>: ISO 19757:2013(E) Table D.5 - Missing item definerer et kvalitetsmål på hvorvidt et gitt/spesifikt element mangler, mens det som omhandles her i dette avsnittet er et kvalitetsmål på hvorvidt det mangler noen (uspesifikke) elementer i datasettet, derfor “elementer”/“items” i flertall.</p>
 </div>
@@ -1662,7 +1660,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect4">
-<h5 id="Antall"><a class="anchor" href="#Antall"></a>Kvalitetsmål Antall manglende elementer (number of missing items)</h5>
+<h5 id="Antall"><a class="link" href="#Antall">Kvalitetsmål Antall manglende elementer (number of missing items)</a></h5>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1703,7 +1701,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect4">
-<h5 id="Andel"><a class="anchor" href="#Andel"></a>Kvalitetsmål Andel manglende elementer (rate of missing items)</h5>
+<h5 id="Andel"><a class="link" href="#Andel">Kvalitetsmål Andel manglende elementer (rate of missing items)</a></h5>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1745,7 +1743,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="Overdekning"><a class="anchor" href="#Overdekning"></a>Kvalitetsdeldimensjon Overdekning (overcoverage/commission)</h4>
+<h4 id="Overdekning"><a class="link" href="#Overdekning">Kvalitetsdeldimensjon Overdekning (overcoverage/commission)</a></h4>
 <div class="paragraph">
 <p>Overdekning kan defineres på helt tilsvarende måte (men “motsatt vis”) som for underdekning i avsnittet foran, dvs. om elementer som ikke skulle vært i datasettet. Arbeidsgruppen velger derfor ikke å bruke tid på å eksemplifisere denne deldimensjonen.</p>
 </div>
@@ -1794,7 +1792,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="_kvalitetsdeldimensjon_selektivitet_selectivity"><a class="anchor" href="#_kvalitetsdeldimensjon_selektivitet_selectivity"></a>Kvalitetsdeldimensjon Selektivitet (selectivity)</h4>
+<h4 id="_kvalitetsdeldimensjon_selektivitet_selectivity"><a class="link" href="#_kvalitetsdeldimensjon_selektivitet_selectivity">Kvalitetsdeldimensjon Selektivitet (selectivity)</a></h4>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1825,7 +1823,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="dublett"><a class="anchor" href="#dublett"></a>Kvalitetsdeldimensjon Dublett (redundancy/duplicate)</h4>
+<h4 id="dublett"><a class="link" href="#dublett">Kvalitetsdeldimensjon Dublett (redundancy/duplicate)</a></h4>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1858,7 +1856,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kvalitetsdimensjon_aktualitet_currentnesstimeliness"><a class="anchor" href="#_kvalitetsdimensjon_aktualitet_currentnesstimeliness"></a>Kvalitetsdimensjon Aktualitet (currentness/timeliness)</h3>
+<h3 id="_kvalitetsdimensjon_aktualitet_currentnesstimeliness"><a class="link" href="#_kvalitetsdimensjon_aktualitet_currentnesstimeliness">Kvalitetsdimensjon Aktualitet (currentness/timeliness)</a></h3>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1901,7 +1899,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kvalitetsdimensjon_samsvar_complianceconformity"><a class="anchor" href="#_kvalitetsdimensjon_samsvar_complianceconformity"></a>Kvalitetsdimensjon Samsvar (compliance/conformity)</h3>
+<h3 id="_kvalitetsdimensjon_samsvar_complianceconformity"><a class="link" href="#_kvalitetsdimensjon_samsvar_complianceconformity">Kvalitetsdimensjon Samsvar (compliance/conformity)</a></h3>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1943,7 +1941,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="_kvalitetsbeskrivelse_i_samsvar_med_conforms_to"><a class="anchor" href="#_kvalitetsbeskrivelse_i_samsvar_med_conforms_to"></a>Kvalitetsbeskrivelse I samsvar med (conforms to)</h4>
+<h4 id="_kvalitetsbeskrivelse_i_samsvar_med_conforms_to"><a class="link" href="#_kvalitetsbeskrivelse_i_samsvar_med_conforms_to">Kvalitetsbeskrivelse I samsvar med (conforms to)</a></h4>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -1984,7 +1982,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kvalitetsdimensjon_tilgjengelighet_availability"><a class="anchor" href="#_kvalitetsdimensjon_tilgjengelighet_availability"></a>Kvalitetsdimensjon Tilgjengelighet (availability)</h3>
+<h3 id="_kvalitetsdimensjon_tilgjengelighet_availability"><a class="link" href="#_kvalitetsdimensjon_tilgjengelighet_availability">Kvalitetsdimensjon Tilgjengelighet (availability)</a></h3>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -2026,7 +2024,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect2">
-<h3 id="_kvalitetsdimensjon_relevans_relevancy"><a class="anchor" href="#_kvalitetsdimensjon_relevans_relevancy"></a>Kvalitetsdimensjon Relevans (relevancy)</h3>
+<h3 id="_kvalitetsdimensjon_relevans_relevancy"><a class="link" href="#_kvalitetsdimensjon_relevans_relevancy">Kvalitetsdimensjon Relevans (relevancy)</a></h3>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -2067,7 +2065,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage"><a class="anchor" href="#_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage"></a>Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)</h4>
+<h4 id="_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage"><a class="link" href="#_ikke_kvantitativfritekst_beskrivelse_bruksformål_specific_usage">Ikke-kvantitativ/fritekst beskrivelse Bruksformål (specific usage)</a></h4>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -2115,7 +2113,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ikke_kvantitativfritekst_beskrivelse_egnethet_usability"><a class="anchor" href="#_ikke_kvantitativfritekst_beskrivelse_egnethet_usability"></a>Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)</h4>
+<h4 id="_ikke_kvantitativfritekst_beskrivelse_egnethet_usability"><a class="link" href="#_ikke_kvantitativfritekst_beskrivelse_egnethet_usability">Ikke-kvantitativ/fritekst beskrivelse Egnethet (usability)</a></h4>
 <div class="paragraph">
 <p><strong>Definisjon</strong>:</p>
 </div>
@@ -2166,7 +2164,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vedlegg_c_uriernavnerom_som_er_brukt"><a class="anchor" href="#_vedlegg_c_uriernavnerom_som_er_brukt"></a>Vedlegg C - URIer/navnerom som er brukt</h2>
+<h2 id="_vedlegg_c_uriernavnerom_som_er_brukt"><a class="link" href="#_vedlegg_c_uriernavnerom_som_er_brukt">Vedlegg C - URIer/navnerom som er brukt</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2247,7 +2245,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vedlegg_d_referanser"><a class="anchor" href="#_vedlegg_d_referanser"></a>Vedlegg D - Referanser</h2>
+<h2 id="_vedlegg_d_referanser"><a class="link" href="#_vedlegg_d_referanser">Vedlegg D - Referanser</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Informativ del av dette dokumentet.</p>
@@ -2274,19 +2272,19 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </div>
 </div>
 <div class="sect1">
-<h2 id="vedleggE"><a class="anchor" href="#vedleggE"></a>Vedlegg E - Arbeidsgruppen</h2>
+<h2 id="vedleggE"><a class="link" href="#vedleggE">Vedlegg E - Arbeidsgruppen</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Informativ del av dette dokumentet.</p>
 </div>
 <div class="sect2">
-<h3 id="_beskrivelse_av_arbeidsgruppens_oppgave"><a class="anchor" href="#_beskrivelse_av_arbeidsgruppens_oppgave"></a>Beskrivelse av arbeidsgruppens oppgave</h3>
+<h3 id="_beskrivelse_av_arbeidsgruppens_oppgave"><a class="link" href="#_beskrivelse_av_arbeidsgruppens_oppgave">Beskrivelse av arbeidsgruppens oppgave</a></h3>
 <div class="paragraph">
 <p>Arbeidsgruppen fikk i oppgave å utarbeide en spesifikasjon for hvordan kvalitet på datasett skal beskrives i en datakatalog.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sammensetning_av_arbeidsgruppen"><a class="anchor" href="#_sammensetning_av_arbeidsgruppen"></a>Sammensetning av arbeidsgruppen</h3>
+<h3 id="_sammensetning_av_arbeidsgruppen"><a class="link" href="#_sammensetning_av_arbeidsgruppen">Sammensetning av arbeidsgruppen</a></h3>
 <div class="paragraph">
 <p>Kartverket ved Morten Borrebæk har ledet denne arbeidsgruppen. Følgende etater og personer har ellers vært involvert i arbeidet:</p>
 </div>
@@ -2387,7 +2385,7 @@ skos:note “antar at det blir etablert en oversikt over pre-definerte kvalitets
 </table>
 </div>
 <div class="sect2">
-<h3 id="_arbeid_i_arbeidsgruppen"><a class="anchor" href="#_arbeid_i_arbeidsgruppen"></a>Arbeid i arbeidsgruppen</h3>
+<h3 id="_arbeid_i_arbeidsgruppen"><a class="link" href="#_arbeid_i_arbeidsgruppen">Arbeid i arbeidsgruppen</a></h3>
 <div class="paragraph">
 <p>Arbeidsgruppen startet sitt arbeid fra 25. januar 2017. Har hatt halvdagsmøter ca. annen hver uke.</p>
 </div>
@@ -2444,7 +2442,7 @@ ga('send', 'pageview');
 </div>
 <div id="footer">
 <div id="footer-text">
-Sist oppdatert 2022-09-23 13:07:46 UTC
+Sist oppdatert 2024-08-08 13:17:10 UTC
 </div>
 </div>
 </body>

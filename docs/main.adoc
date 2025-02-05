@@ -1,5 +1,4 @@
 include::locale/attributes.adoc[]
-
 = Spesifikasjon for beskrivelse av kvalitet på datasett
 Versjon 1.0
 :description: Spesifikasjon for beskrivelse av kvalitet på datasett
@@ -16,8 +15,6 @@ Versjon 1.0
 
 image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 
-// include::shared/download.adoc[]
-
 *Status*: [yellow-background]#utgått# +
 *Publisert*: september 2017 +
 *Oppdatert*: 3. november 2020
@@ -25,12 +22,10 @@ image::digitaliseringsdirektoratet.png[width=50%, pdfwidth=30vw]
 // markere denne som "utgått" med fixed textbox her kodet direkte i html
 ++++
 <div style="position: fixed; top: 40%; left: 50%; transform: translateX(-50%); background-color: #ffffff; border: 1px solid black; padding: 15px; box-shadow: 15px 15px 15px red; opacity: 0.85">
-  <p> <b>NB! Denne spesifikasjonen er utgått og vil ikke bli vedlikeholdt (inkl. ev. kjente feil/mangler).</b> <br>
-   Se <a href=https://data.norge.no/specification/dqv-ap-no>DQV-AP-NO</a> som implementerer kravene i denne spesifikasjonen. </p>
+  <p> <strong>NB! Denne spesifikasjonen er utgått og vil ikke bli vedlikeholdt (inkl. ev. kjente feil/mangler). <br>
+   Se <a href=https://data.norge.no/specification/dqv-ap-no>DQV-AP-NO</a> som implementerer kravene i denne spesifikasjonen. </strong></p>
 </div>
 ++++
-
-// IMPORTANT: Denne spesifikasjonen er [yellow-background]#Denne spesifikasjonen er#. Se https://data.norge.no/specification/dqv-ap-no/[DQV-AP-NO] som implementerer kravene i denne spesifikasjonen.
 
 :leveloffset: +1
 

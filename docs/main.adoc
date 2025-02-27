@@ -51,4 +51,4 @@ include::Vedlegg-E.adoc[]
 
 
 
-include::shared/stats.adoc[]
+// include::shared/stats.adoc[]
